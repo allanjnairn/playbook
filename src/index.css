@@ -21,3 +21,7 @@ body {
 body {
 	font-family: 'Neutro';
 }
+
+fieldset {
+	border: none;
+}

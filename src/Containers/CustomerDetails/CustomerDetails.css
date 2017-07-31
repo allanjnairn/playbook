@@ -1,0 +1,44 @@
+.customerDetails {
+	width: 100%;
+}
+
+.customerDetailsTop {
+	width: 100%;
+	padding: 10px 20px;
+	background: #6100A5;
+	h3 {
+		color: #fff;
+	}
+}
+
+.customerDetailsForm {
+	padding: 20px;
+	form {
+		width: 100%;
+
+		fieldset {
+			width: 100%;
+			max-width: 400px;
+			/*margin: 20px 0;*/
+			label {
+				width: 100%;
+				display: block;
+			}
+
+			input {
+				width: 100%;
+				display: block;
+				margin: 10px 0;
+				font-size: 22px;
+				padding: 5px;
+			}
+		}
+		fieldset:nth-child(3) {
+			input {
+				width: 50%;
+				display: inline-block;
+			}
+		}
+
+	}
+}

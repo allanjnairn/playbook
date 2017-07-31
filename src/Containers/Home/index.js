@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomerDetails from '../CustomerDetails'
 
 export default class index extends React.Component {
 
@@ -9,9 +10,11 @@ export default class index extends React.Component {
   render() {
     return (
       <div onClick={()=>{
-        console.log(this.props.history.push('/step'))
+        // console.log(this.props.history.push('/step'))
       }}>
-      	home
+
+
+        <CustomerDetails />
 
       </div>
     );
