@@ -15,7 +15,7 @@ export default class index extends React.Component {
 
 
   chooseOption() {
-    MainStore.state.step = 2
+    MainStore.state.step = 6
     MainStore.emit('stepChange')
   }
 
@@ -59,6 +59,13 @@ export default class index extends React.Component {
               )
           })}
         </div>
+
+        <div className={styles.buttonContainer}>
+          <div onClick={this.chooseOption.bind(this)} className={styles.button5}>
+            <span>Next</span>
+          </div>
+        </div>
+
       </div>
     );
   }

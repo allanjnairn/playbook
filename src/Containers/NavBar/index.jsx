@@ -11,12 +11,19 @@ export default class index extends React.Component {
     return (
       <div className={styles.navBar}>
         <div className={styles.navBarContent}>
-          <div className={styles.logo}>
+          <div onClick={()=>{
+            console.log(this.props)
+          }} className={styles.logo}>
             <img src={Logo} />
+            <div className={styles.logoText}>
+              mission<br/>guidebook
+
+            </div>
           </div>
 
-          <div className={styles.menuButton}>
-            <i className="fa fa-bars" aria-hidden="true"></i>
+          <div className={styles.navOptions}> 
+            <span>Settings</span>
+            <span>Sign Out</span>
           </div>
         </div>
       </div>

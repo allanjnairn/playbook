@@ -27,6 +27,8 @@ export default class index extends React.Component {
         <div className={styles.options}>
           <div onClick={this.chooseOption.bind(this)} className={styles.option}>
             <div className={styles.optionImage}>
+              <div className='cover'>
+              </div>
               <img src={Sales} alt=""/>
             </div>
             <div className={styles.optionText}>
@@ -36,6 +38,8 @@ export default class index extends React.Component {
 
           <div onClick={this.chooseOption.bind(this)} className={styles.option}>
             <div className={styles.optionImage}>
+              <div className='cover'>
+              </div>
               <img src={Support} alt=""/>
             </div>
             <div className={styles.optionText}>

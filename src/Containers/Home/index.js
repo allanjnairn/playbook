@@ -8,7 +8,9 @@ export default class index extends React.Component {
 
   render() {
     return (
-      <div>
+      <div onClick={()=>{
+        console.log(this.props.history.push('/step'))
+      }}>
       	home
 
       </div>

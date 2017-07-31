@@ -11,9 +11,17 @@
 }
 
 .logo {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
 	img {
-		width: 200px;
+		height: 100px;
 	}
+}
+
+.logoText {
+	font-family: 'Neutro-light';
+	font-size: 22px;
 }
 
 .menuButton {
@@ -24,3 +32,22 @@
 
 	}
 }
+
+.navOptions {
+	margin-left: auto;
+	margin-right: 20px;
+	display: flex;
+	justify-content: space-between;
+	span {
+		cursor: pointer;
+		padding: 0px 10px;
+		background: -webkit-linear-gradient(#6100A5, #EC0677);
+		  -webkit-background-clip: text;
+		  -webkit-text-fill-color: transparent;
+	}
+
+	span:first-child {
+		border-right: 1px solid #ccc;
+	}
+}
+

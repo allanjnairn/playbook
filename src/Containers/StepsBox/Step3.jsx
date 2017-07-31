@@ -31,6 +31,8 @@ export default class index extends React.Component {
         <div className={styles.options3}>
           <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
             <div className={styles.option3Image}>
+              <div className='cover'>
+              </div>
               <img src={Trade} alt=""/>
             </div>
             <div className={styles.option3Text}>
@@ -40,6 +42,8 @@ export default class index extends React.Component {
 
           <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
             <div className={styles.option3Image}>
+              <div className='cover'>
+              </div>
               <img src={Hospitality} alt=""/>
             </div>
             <div className={styles.option3Text}>
@@ -49,6 +53,8 @@ export default class index extends React.Component {
 
           <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
             <div className={styles.option3Image}>
+              <div className='cover'>
+              </div>
               <img src={Retail} alt=""/>
             </div>
             <div className={styles.option3Text}>
@@ -58,6 +64,8 @@ export default class index extends React.Component {
 
           <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
             <div className={styles.option3Image}>
+              <div className='cover'>
+              </div>
               <img src={Professional} alt=""/>
             </div>
             <div className={styles.option3Text}>

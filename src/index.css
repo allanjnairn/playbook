@@ -7,3 +7,17 @@ body {
 * {
 	box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'Neutro'; /*a name to be used later*/
+    src: url('./Fonts/NeutroMYOB-Black.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Neutro-Light'; /*a name to be used later*/
+    src: url('./Fonts/NeutroMYOB-Light.otf'); /*URL to font*/
+}
+
+body {
+	font-family: 'Neutro';
+}
