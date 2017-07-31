@@ -247,21 +247,53 @@
 	width: 100%;
 	h2 {
 		cursor: pointer;
+		background: transparent;
+		border: 2px solid #000;
+		color: #000;
+		display: inline-block;
+		padding: 10px 20px;
+		border-radius: 20px;
+		margin: 10px 0;
+		transition: border-color 0.2s, background 0.2s, color 0.2s;
+	}
+	h2:hover {
+		cursor: pointer;
 		background: #6100A5;
 		color: #fff;
 		display: inline-block;
 		padding: 10px 20px;
 		border-radius: 20px;
+		margin: 10px 0;
+		border-color: #6100A5;
+	}
+	:global {
+		.active {
+			cursor: pointer;
+			background: #6100A5;
+			color: #fff;
+			display: inline-block;
+			padding: 10px 20px;
+			border-radius: 20px;
+			margin: 10px 0;
+			border-color: #6100A5;
+		}
 	}
 }
 
 .choiceBoxBottom {
 	display: flex;
 	justify-content: space-between;
+	background: #eee;
+	padding: 20px;
+	border-radius: 10px;
+	h3 {
+		margin-top: 0;
+	}
 }
 
 .choiceBoxQuestions {
 	max-width: 600px;
+	padding-right: 20px;
 }
 
 .choiceBoxKeyWords {
@@ -271,9 +303,19 @@
 
 .question {
 	font-family: 'Neutro-light';
+	display: flex;
+	margin: 5px 0;
+	div {
+		margin-right: 10px;
+	}
 }
 .keyWord {
 	font-family: 'Neutro-light';
+	display: flex;
+	margin: 5px 0;
+	div {
+		margin-right: 10px;
+	}
 }
 
 .button5 {

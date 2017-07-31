@@ -34,24 +34,34 @@ export default class index extends React.Component {
 
             return (
                 <div className={styles.choiceBox}>
-                <h2 onClick={()=>{
+                <h2 className={open ? 'active': ''} onClick={()=>{
                   this.setState({openChoice: index})
-                }}>{MainStore.state.discovery[choice]}</h2> 
+                }}>{MainStore.state.discovery[choice]} 
+                </h2> 
                   {open ? (
                       <div className={styles.choiceBoxBottom}>
                         <div className={styles.choiceBoxQuestions}>
                           <h3>Target Questions</h3>
-                          <div className={styles.question}>
-                            - {"When it comes to mananging your business expenses, what areas do you find it impacts in your business when you don't manage them appropriately?"}
-                          </div>
+                          {MainStore.state.questions['1'].map((q)=>{
+                            return (
+                                <div className={styles.question}>
+                                  <div>-</div> {q}
+                                </div>
+                              )
+                          })}
                         </div>
 
                         <div className={styles.choiceBoxKeyWords}>
                           <h3>Key Words</h3>
 
-                          <div className={styles.keyWord}>
-                            - (bill, credit card, cash payment)
-                          </div>
+                          {MainStore.state.keyWords['1'].map((k)=>{
+                            return (
+
+                              <div className={styles.keyWord}>
+                                <div>-</div> {k}
+                              </div>
+                            ) 
+                          })}
                         </div>
                       </div>
                     ) : ''}
