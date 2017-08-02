@@ -44,23 +44,31 @@ export default class index extends React.Component {
           <div className={styles.breadcrumbs}>
             <div className={styles.breadcrumbsContent}>
               <div onClick={this.optionClick.bind(this, 1)} className={step===1 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
-                Home
+                Home Station
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
               <div onClick={this.optionClick.bind(this, 2)} className={step===2 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
-                Parameters
+                Mission Parameters
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
-              <div onClick={this.optionClick.bind(this, 3)} className={step===3||step===4 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
-                Discovery
+              <div onClick={this.optionClick.bind(this, 3)} className={step===3 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+                Industry Discovery
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
-              <div onClick={this.optionClick.bind(this, 5)} className={step===5||step===6 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
-                Analysis
+              <div onClick={this.optionClick.bind(this, 4)} className={step===4 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+                Mission Exploration
+              </div>
+              <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              <div onClick={this.optionClick.bind(this, 5)} className={step===5 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+                Needs Analysis
+              </div>
+              <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              <div onClick={this.optionClick.bind(this, 6)} className={step===6 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+                Encounter Summary
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
               <div onClick={this.optionClick.bind(this, 7)} className={step===7 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
-                Presentation
+                Mission Outcome
               </div>
             </div>
           </div>
