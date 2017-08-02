@@ -4,7 +4,7 @@ import Sales from '../../Images/call-centre-ml-fml-238.jpg'
 import Support from '../../Images/callcentre-male-442.jpg'
 import MainStore from '../../Stores/MainStore.js'
 import Trade from '../../Images/tradie-1893.jpg'
-import Hospitality from '../../Images/hospitality-food-stall-1724-rgl.jpg'
+import Hospitality from '../../Images/hospitality-cafe-118-cndy.jpg'
 import Retail from '../../Images/franchise-accprtnrt-1712-indentikit-cabana.jpg'
 import Professional from '../../Images/pro-service-prtnrshp-0999-rgl.jpg'
 

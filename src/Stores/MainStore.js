@@ -24,7 +24,22 @@ class MainStore extends EventEmitter {
 				"(collating, determining paid/unpaid, reporting",
 				"(less stress, less time spent tracking finances)"
 				]
-			}
+			},
+			CurrentState: [
+				"No direct visibility for monthly expenses unless hours spend on the data analysis",
+				"All supplier orders done on phone and invoices received by post",
+				"Supplier invoices paid as per the due date and monthly statements recieved by post reflecting the payment status",
+				"Organise time with accountant to view the statements and help with P/L reporting from data"
+
+			],
+			FutureState: [
+				"No direct visibility for monthly expenses unless hours spend on the data analysis",
+				"All supplier orders done on phone and invoices received by post",
+				"Supplier invoices paid as per the due date and monthly statements recieved by post reflecting the payment status",
+				"Organise time with accountant to view the statements and help with P/L reporting from data"
+
+			],
+
 		}
 	}
 

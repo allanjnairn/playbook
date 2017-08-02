@@ -12,7 +12,7 @@ export default class index extends React.Component {
       <div className={styles.navBar}>
         <div className={styles.navBarContent}>
           <div onClick={()=>{
-            console.log(this.props)
+            window.location = '/'
           }} className={styles.logo}>
             <img src={Logo} />
             <div className={styles.logoText}>

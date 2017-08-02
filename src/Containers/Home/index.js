@@ -8,13 +8,14 @@ export default class index extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div onClick={()=>{
         // console.log(this.props.history.push('/step'))
       }}>
 
 
-        <CustomerDetails />
+        <CustomerDetails push={this.props.history.push} />
 
       </div>
     );

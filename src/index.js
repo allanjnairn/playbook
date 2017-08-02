@@ -14,8 +14,9 @@ import {
 } from 'react-router-dom'
 
 
+
 ReactDOM.render((
-	<App>
+	<App Link={Link}>
 		<Router>
 			<div>
 				<Route path='/' exact={true} component={Home} />

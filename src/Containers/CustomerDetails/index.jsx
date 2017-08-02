@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './CustomerDetails.css'
 import Logo from '../../Images/MYOB_logo_RGB.jpg'
+import MainStore from '../../Stores/MainStore.js'
 
 export default class index extends React.Component {
   constructor(props) {
@@ -25,38 +26,51 @@ export default class index extends React.Component {
         <div className={styles.customerDetailsForm}>
 
           <form>
-
+            <h3>Customer Type</h3>
             <div className={styles.checkboxes}>
-              <input id='checkbox1' type="checkbox" value='asdga'/>
-              <label htmlFor="checkbox1">New Customer</label>
-              <input id='checkbox1' type="checkbox" value='asdga'/>
-              <label htmlFor="checkbox1">Existing Customer</label>
-              <input id='checkbox1' type="checkbox" value='asdga'/>
-              <label htmlFor="checkbox1">Returning Customer</label>
+              <div>
+                <input id='checkbox1' type="checkbox" value='asdga'/>
+                <label htmlFor="checkbox1">New Customer</label>
+              </div>
+              <div>
+                <input id='checkbox2' type="checkbox" value='asdga'/>
+                <label htmlFor="checkbox2">Existing Customer</label>
+              </div>
+              <div>
+                <input id='checkbox3' type="checkbox" value='asdga'/>
+                <label htmlFor="checkbox3">Returning Customer</label>
+              </div>
             </div>
 
 
             <fieldset>
               <label>Business Name</label>
-              <input type="text" value={businessName} onChange={(e)=>{this.setState({businessName: e.target.value})}} />
+              <input placeholder="Enter business name" type="text" value={businessName} onChange={(e)=>{this.setState({businessName: e.target.value})}} />
             </fieldset>
 
             <fieldset>
               <label>Contact Person</label>
-              <input type="text" value={firstName} onChange={(e)=>{this.setState({firstName: e.target.value})}} />
-              <input type="text" value={lastName} onChange={(e)=>{this.setState({lastName: e.target.value})}} />
+              <input placeholder="Enter first name" type="text" value={firstName} onChange={(e)=>{this.setState({firstName: e.target.value})}} />
+              <input placeholder="Enter last name" type="text" value={lastName} onChange={(e)=>{this.setState({lastName: e.target.value})}} />
             </fieldset>
 
             <fieldset>
               <label>Contact Phone</label>
-              <input type="text" value={phone} onChange={(e)=>{this.setState({phone: e.target.value})}} />
+              <input placeholder="Enter phone number" type="number" value={phone} onChange={(e)=>{this.setState({phone: e.target.value})}} />
             </fieldset>
 
             <fieldset>
               <label>Email *</label>
-              <input type="text" value={email} onChange={(e)=>{this.setState({email: e.target.value})}} />
+              <input placeholder="Enter email address" type="email" value={email} onChange={(e)=>{this.setState({email: e.target.value})}} />
             </fieldset>
           </form>
+
+          <div onClick={()=>{
+            this.props.push('/step')
+            MainStore.emit('stepChange')
+          }} className={styles.button}>
+            <span>Next Step</span>
+          </div>
 
         </div>
       </div>

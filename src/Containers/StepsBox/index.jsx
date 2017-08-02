@@ -6,6 +6,7 @@ import Step3 from './Step3.jsx'
 import Step4 from './Step4.jsx'
 import Step5 from './Step5.jsx'
 import Step6 from './Step6.jsx'
+import Step7 from './Step7.jsx'
 import MainStore from '../../Stores/MainStore.js'
 
 export default class index extends React.Component {
@@ -41,6 +42,7 @@ export default class index extends React.Component {
       step4 : <Step4 />,
       step5 : <Step5 />,
       step6 : <Step6 />,
+      step7 : <Step7 />,
     }
 
     let stepComponent = stepsObj['step'+step]

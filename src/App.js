@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import styles from './App.css';
 import NavBar from './Containers/NavBar'
+import LoginPage from './Containers/LoginPage'
+import Breadcrumbs from './Components/Breadcrumbs'
 
 class App extends Component {
   render() {
+
+    console.log(this.props)
+
+   
     return (
       <div className={styles.app}>
+        <LoginPage />
+
         <NavBar />
-        <div className={styles.mainBody}>
+        <Breadcrumbs Link={this.props.Link} />
+        <div className={window.location.href.toLowerCase().includes('step') ? styles.mainBody+' '+styles.mainBodyPlus : styles.mainBody}>
           {this.props.children}
         </div>
       </div>

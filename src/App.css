@@ -7,4 +7,10 @@
 
 .mainBody {
   width: 100%;
+  max-height: calc(100vh - 100px);
+  overflow: auto; 
+}
+
+.mainBodyPlus {
+	max-height: calc(100vh - 159px);
 }
