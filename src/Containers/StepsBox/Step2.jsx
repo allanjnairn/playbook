@@ -4,12 +4,12 @@ import Sales from '../../Images/call-centre-ml-fml-238.jpg'
 import Support from '../../Images/callcentre-male-442.jpg'
 import MainStore from '../../Stores/MainStore.js'
 
-import Rocket from '../../Images/startup.svg'
-import ufo from '../../Images/ufo.svg'
-import satellite from '../../Images/satellite.svg'
-import solarSystem from '../../Images/solar-system.svg'
-import asteroid from '../../Images/asteroid.svg'
-import moonRover from '../../Images/moon-rover.svg'
+import Rocket from '../../Images/startup sml.png'
+import ufo from '../../Images/ufo sml.png'
+import satellite from '../../Images/satellite sml.png'
+import solarSystem from '../../Images/solar-system sml.png'
+import asteroid from '../../Images/asteroid sml.png'
+import moonRover from '../../Images/moon-rover.png'
 
 
 export default class index extends React.Component {

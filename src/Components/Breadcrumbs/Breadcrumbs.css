@@ -19,6 +19,7 @@
 	color: #000;
 	transition: color 0.2s;
 	color: #6100A5;
+
 }
 
 .breadcrumbsOption:last-child {
@@ -28,4 +29,7 @@
 .breadcrumbsOptionActive {
 	font-family: 'Neutro';
 	color: #6100A5;
+	background: -webkit-linear-gradient(#6100A5, #EC0677);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
 }

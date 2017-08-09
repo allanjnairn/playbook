@@ -1,0 +1,114 @@
+.objectionHandling {
+	padding: 20px;
+	h2 {
+		text-align: center;
+		font-family: 'Neutro-light';
+		font-size: 30px;
+	}
+	h3 {
+		font-family: 'Neutro-light';
+		font-size: 24px;
+	}
+}
+
+
+.topics {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.handling {
+	margin-top: 20px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;	
+	justify-content: center;
+}
+
+.premise {
+	width: 30%;
+	margin-right: 5px;
+}
+.guidance {
+	margin-left: 5px;
+	width: 70%;
+}
+
+.handlingHeader {
+	width: 100%;
+	cursor: pointer;
+	background: #6100A5;
+	border: 2px solid #6100A5;
+	color: #fff;
+	display: inline-block;
+	padding: 5px 15px;
+	border-radius: 20px;
+	margin: 10px 0;
+	h2 {
+		font-size: 16px;
+	}
+	transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+
+.handlingBody {
+	/*text-align: center;*/
+	background: #eee;
+	padding: 20px;
+	border-radius: 10px;
+
+}
+
+.multipleChoice {
+	width: 100%;
+	max-width: 800px;
+	margin-left: auto;;
+	margin-right: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.choiceCard {
+	padding: 20px;
+	width: calc(16.6% - 20px);
+	text-align: center;
+	margin: 10px 10px;
+	border: 4px solid;
+	border-radius: 10px;
+	position: relative;
+	height: 100px;
+	cursor: pointer;
+	transition: border-color 0.3s, background 0.3s;
+	border-color: #6100A5;
+	background: #6100A5;
+	span {
+
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: color 0.3s;
+		color: #fff;
+	}
+}
+
+.choiceCardLevel2 {
+	width: calc(25% - 20px);
+}
+
+.choiceCard:hover {
+	border-color: #EC0677;
+	background: #EC0677;
+	span {
+		color: #fff;
+	}
+}
+.choiceCardActive {
+	border-color: #EC0677;
+	background: #EC0677;
+	span {
+		color: #fff;
+	}
+}

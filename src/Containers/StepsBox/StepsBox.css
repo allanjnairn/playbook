@@ -24,21 +24,36 @@
 }
 
 .option {
-	width: 400px;
-	margin: 0 10px;
+	width: 100%;
 	cursor: pointer;
-	border: 5px solid transparent;
+	border: 0px solid transparent;
 	transition: border-color 0.3s;
 	position: relative;
 	border-color: #6100A5;
+	
 }
 
 .option:hover {
 	border-color: #EC0677;
 	:global {
 		.cover {
-			opacity: 0;
+			opacity: 0.3;
 		}
+	}
+}
+
+.optionsBG {
+	width: 400px;
+	margin: 0 10px;
+	position: relative;
+	padding: 5px;
+	background: transparent;
+	background: linear-gradient(to right, #6100A5 , #EC0677);
+}
+
+.optionsBG:hover {
+	span {
+		color: #fff;
 	}
 }
 
@@ -56,7 +71,7 @@
 			width: 100%;
 			height: 100%;
 			background: #000;
-			opacity: 0.3;
+			opacity: 0;
 			z-index: 10;
 			transition: opacity 0.3s;
 		}
@@ -70,8 +85,22 @@
 	transform: translateX(-50%);
 	z-index: 100;
 	span {
+		transition: color 0.3s;
 		font-size: 30px;
-		color: #fff;
+		color: #6100A5;
+	}
+}
+
+.optionText2 {
+	position: absolute;
+	left: 50%;
+	top: calc(0% + 50px);
+	transform: translateX(-50%);
+	z-index: 100;
+	span {
+		transition: color 0.3s;
+		font-size: 30px;
+		color: #EC0677;
 	}
 }
 
@@ -103,7 +132,7 @@
 
 .option2 {
 	/*width: 400px;*/
-	margin: 0 10px;
+	margin: 0 40px;
 	cursor: pointer;
 	border: 5px solid transparent;
 	transition: border-color 0.3s;
@@ -536,6 +565,10 @@
 	font-family: 'Neutro-light';
 }
 
+.outcomeDiscovery {
+	max-width: 350px;
+}
+
 .outcomeHeader {
 	width: 100%;
 	cursor: pointer;
@@ -560,6 +593,22 @@
 	border-radius: 10px;
 
 }
+
+.outcomePointsDiscovery {
+	text-align: left;
+	min-height: 177px;
+    padding-left: 10px;
+    ul {
+    	li {
+    		margin: 10px 0;
+    	}
+    }
+}
+
 .outcomePoint {
 	margin: 5px 0;
+}
+
+.determine {
+	font-family: 'Neutro-light';
 }

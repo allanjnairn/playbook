@@ -25,25 +25,29 @@ export default class index extends React.Component {
         <h2>Select Your Mission Team</h2>
 
         <div className={styles.options}>
-          <div onClick={this.chooseOption.bind(this)} className={styles.option}>
-            <div className={styles.optionImage}>
-              <div className='cover'>
+          <div className={styles.optionsBG}>
+            <div onClick={this.chooseOption.bind(this)} className={styles.option}>
+              <div className={styles.optionImage}>
+                <div className='cover'>
+                </div>
+                <img src={Sales} alt=""/>
               </div>
-              <img src={Sales} alt=""/>
-            </div>
-            <div className={styles.optionText}>
-              <span>SME Sales</span>
+              <div className={styles.optionText}>
+                <span>SME Sales</span>
+              </div>
             </div>
           </div>
 
-          <div onClick={this.chooseOption.bind(this)} className={styles.option}>
-            <div className={styles.optionImage}>
-              <div className='cover'>
+          <div className={styles.optionsBG}>
+            <div onClick={this.chooseOption.bind(this)} className={styles.option}>
+              <div className={styles.optionImage}>
+                <div className='cover'>
+                </div>
+                <img src={Support} alt=""/>
               </div>
-              <img src={Support} alt=""/>
-            </div>
-            <div className={styles.optionText}>
-              <span>SME Support</span>
+              <div className={styles.optionText+' '+styles.optionText2}>
+                <span>SME Support</span>
+              </div>
             </div>
           </div>
         </div>

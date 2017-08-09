@@ -1,0 +1,39 @@
+.sideMissions {
+
+}
+
+.breadcrumbs {
+	
+}
+
+.breadcrumbsContent {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
+	i {
+		color: #6100A5;
+		display: none;
+	}
+}
+.breadcrumbsOption {
+	padding: 0 10px;
+	font-family: 'Neutro-light';
+	border-right: 1px solid #000;
+	cursor: pointer;
+	color: #000;
+	transition: color 0.2s;
+	color: #6100A5;
+
+}
+
+.breadcrumbsOption:last-child {
+	border-right: none;
+}
+
+.breadcrumbsOptionActive {
+	font-family: 'Neutro';
+	color: #6100A5;
+	background: -webkit-linear-gradient(#6100A5, #EC0677);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+}

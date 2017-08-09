@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './LoginPage.css'
+import graphic from '../../Images/MYOB Login Page.png'
 
 
 export default class index extends React.Component {
@@ -9,7 +10,7 @@ export default class index extends React.Component {
     this.state = {
       email: '',
       password: '',
-      done: false
+      done: true
     }
   }
 
@@ -28,19 +29,15 @@ export default class index extends React.Component {
             <div className={styles.loginPage}>
               <div className={styles.loginPageContent}>
 
-                <div className={styles.logo}>
-                <div>
-                  myob
-                </div>
-                <div>
-                  mission <br/>
-                  guidebook
-                </div>
+                <div className={styles.graphic}>
+                  <div>
+                    <img src={graphic} alt=""/>
+                  </div>
                 </div>
 
                 <form onSubmit={this.submit.bind(this)}>
-                  <input type="email" value={email} onChange={(e)=>{this.setState({email: e.target.value})}} />
-                  <input type="password" value={password} onChange={(e)=>{this.setState({password: e.target.value})}} />
+                  <input placeholder="email" type="email" value={email} onChange={(e)=>{this.setState({email: e.target.value})}} />
+                  <input placeholder="password" type="password" value={password} onChange={(e)=>{this.setState({password: e.target.value})}} />
                   <button style={{display: 'none'}}></button>
                 </form>
 
@@ -55,3 +52,13 @@ export default class index extends React.Component {
     );
   }
 }
+
+// <div className={styles.logo}>
+// <div>
+//   myob
+// </div>
+// <div>
+//   mission <br/>
+//   guidebook
+// </div>
+// </div>

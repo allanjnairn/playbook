@@ -35,13 +35,15 @@ export default class index extends React.Component {
   render() {
     const {step} = this.state
 
+    console.log(this.props)
+
     let stepsObj = {
       step1 : <Step1 />,
       step2 : <Step2 />,
       step3 : <Step3 />,
       step4 : <Step4 />,
       step5 : <Step5 />,
-      step6 : <Step6 />,
+      step6 : <Step6 push={this.props.history.push} />,
       step7 : <Step7 />,
     }
 

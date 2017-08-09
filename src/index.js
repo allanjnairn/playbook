@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Home from './Containers/Home';
 import StepsBox from './Containers/StepsBox';
+import ObjectionHandling from './Containers/ObjectionHandling';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -21,6 +22,7 @@ ReactDOM.render((
 			<div>
 				<Route path='/' exact={true} component={Home} />
 				<Route path='/step' exact={true} component={StepsBox} />
+				<Route path='/objectionHandling' exact={true} component={ObjectionHandling} />
 			</div>
 		</Router>
 	</App>
