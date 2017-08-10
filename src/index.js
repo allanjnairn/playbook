@@ -5,6 +5,7 @@ import App from './App';
 import Home from './Containers/Home';
 import StepsBox from './Containers/StepsBox';
 import ObjectionHandling from './Containers/ObjectionHandling';
+import SideMissionPage from './Containers/SideMissionPage';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -23,6 +24,7 @@ ReactDOM.render((
 				<Route path='/' exact={true} component={Home} />
 				<Route path='/step' exact={true} component={StepsBox} />
 				<Route path='/objectionHandling' exact={true} component={ObjectionHandling} />
+				<Route path='/sideMission' exact={true} component={SideMissionPage} />
 			</div>
 		</Router>
 	</App>
