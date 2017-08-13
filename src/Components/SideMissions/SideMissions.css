@@ -3,10 +3,11 @@
 }
 
 .breadcrumbs {
-
+	font-family: 'Neutro-light';
 	h3 {
 		margin: 0;
 		position: relative;
+
 		top: -2px;
 	}
 	

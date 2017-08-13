@@ -74,6 +74,7 @@ export default class index extends React.Component {
                 <h2>Objection Handling Premise</h2>
               </div>
               <div className={styles.handlingBody}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eveniet, vitae necessitatibus a reiciendis tempora possimus similique qui non autem placeat quod omnis iure.
               </div>
             </div>
             <div className={styles.guidance}>
@@ -81,6 +82,7 @@ export default class index extends React.Component {
                 <h2>Objection Handling Guidance</h2>
               </div>
               <div className={styles.handlingBody}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque praesentium aliquam blanditiis commodi perspiciatis dolore sapiente, quae unde ipsam ea nulla. Inventore, soluta, voluptates. Aperiam asperiores commodi labore aliquam corporis veritatis ipsum autem, quas vero dolorem necessitatibus tempora nemo voluptate, dolore aliquid repellendus.
               </div>
             </div>
           </div>

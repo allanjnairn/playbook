@@ -9,7 +9,7 @@ import SideMissions from './Components/SideMissions'
 class App extends Component {
   render() {
 
-    console.log(this.props)
+    console.log(this.props, 'asgads')
 
    
     return (
@@ -18,7 +18,7 @@ class App extends Component {
 
         <NavBar />
         <Breadcrumbs Link={this.props.Link} />
-        <SideMissions Link={this.props.Link} />
+        <SideMissions Router={this.props.Router} Link={this.props.Link} />
 
         <div className={window.location.href.toLowerCase().includes('step') ? styles.mainBody+' '+styles.mainBodyPlus : styles.mainBody}>
           {this.props.children}

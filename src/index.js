@@ -12,19 +12,19 @@ import registerServiceWorker from './registerServiceWorker';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
 } from 'react-router-dom'
 
-
+console.log(Router, Route, Link)
 
 ReactDOM.render((
-	<App Link={Link}>
+	<App Router={Router} Link={Link}>
 		<Router>
 			<div>
 				<Route path='/' exact={true} component={Home} />
 				<Route path='/step' exact={true} component={StepsBox} />
 				<Route path='/objectionHandling' exact={true} component={ObjectionHandling} />
-				<Route path='/sideMission' exact={true} component={SideMissionPage} />
+				<Route path='/sideMission/:title' exact={true} component={SideMissionPage} />
 			</div>
 		</Router>
 	</App>
