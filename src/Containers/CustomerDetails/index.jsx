@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './CustomerDetails.css'
 import Logo from '../../Images/MYOB_logo_RGB.jpg'
 import MainStore from '../../Stores/MainStore.js'
-import Slider from 'react-slider'
+import Slider, { Range } from 'rc-slider';
 
 export default class index extends React.Component {
   constructor(props) {
@@ -50,24 +50,24 @@ export default class index extends React.Component {
             </fieldset>
 
             <div className={styles.slider}>
-              <Slider withBars>
-                <div className="my-handle">1</div>
-                  <div className="my-handle">2</div>
-                  <div className="my-handle">3</div>
-              </Slider>
+              <h3>How did the Mission Guide book help this call?</h3>
+             <Slider min={1} max={10} step={1} marks={1} />
             </div>
 
           </form>
 
-          <div onClick={()=>{
-            this.props.push('/step')
-            MainStore.emit('stepChange')
-          }} className={styles.button}>
-            <span>Next Step</span>
-          </div>
+         
 
         </div>
       </div>
     );
   }
 }
+
+
+// <div onClick={()=>{
+//   this.props.push('/step')
+//   MainStore.emit('stepChange')
+// }} className={styles.button}>
+//   <span>Next Step</span>
+// </div>
