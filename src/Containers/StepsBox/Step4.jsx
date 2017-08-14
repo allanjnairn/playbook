@@ -99,7 +99,10 @@ export default class index extends React.Component {
 
             return (
                 <div onClick={this.cardClick.bind(this, index)} className={chosen ? styles.choiceCard+' '+styles.choiceCardActive : styles.choiceCard}>
-                  <span>{e}</span>
+                  <span className='hoverHidden'>{e}</span>
+                  <div className='hoverText'>
+                    <span>Lorem ipsum dolor.</span>
+                  </div>
                 </div>
               )
           })}

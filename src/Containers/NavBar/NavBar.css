@@ -35,14 +35,14 @@
 }
 
 .navOptions {
-	margin-left: auto;
+	margin-left: 20px;
 	margin-right: 20px;
 	display: flex;
 	justify-content: space-between;
 	span {
 		cursor: pointer;
 		padding: 0px 10px;
-		background: -webkit-linear-gradient(#6100A5, #EC0677);
+		background: -webkit-linear-gradient( left, #6100A5, #EC0677);
 		  -webkit-background-clip: text;
 		  -webkit-text-fill-color: transparent;
 	}
@@ -52,3 +52,19 @@
 	}
 }
 
+
+.objection {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: auto;
+	margin-right: 0px;
+	img {
+		width: 40px;
+	}
+	h3 {
+		font-size: 12px;
+		font-family: 'Neutro-light';
+	}
+}

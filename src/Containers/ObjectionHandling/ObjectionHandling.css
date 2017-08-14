@@ -29,12 +29,12 @@
 }
 
 .premise {
-	width: 30%;
+	width: 40%;
 	margin-right: 5px;
 }
 .guidance {
 	margin-left: 5px;
-	width: 70%;
+	width: 60%;
 }
 
 .handlingHeader {
@@ -97,6 +97,8 @@
 
 .choiceCardLevel2 {
 	width: calc(25% - 20px);
+	border-color: #EC0677;
+	background: #EC0677;
 }
 
 .choiceCard:hover {
@@ -105,6 +107,12 @@
 	span {
 		color: #fff;
 	}
+}
+
+.choiceCardLevel2:hover {
+	border-color: #6100A5;
+	background: #6100A5;
+
 }
 .choiceCardActive {
 	border-color: #EC0677;

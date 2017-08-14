@@ -29,7 +29,7 @@ export default class index extends React.Component {
   }
 
   optionClick(e){
-    console.log(this.props)
+    this.props.history.push('/sideMission/'+e)
 
   }
 
@@ -46,27 +46,75 @@ export default class index extends React.Component {
             <div className={styles.breadcrumbsContent}>
               <h3>Side Mission Options:</h3>
 
-              <div onClick={this.optionClick.bind(this, 'Cloud Services')} className={step===1 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+              <div onClick={this.optionClick.bind(this, 'Cloud Services')} className={step===0 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Cloud Services
+
+                <div className='hoverBox'>
+                  <div className='box'>
+                  </div>
+                  <div className='hoverBoxContent'>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aliquid reiciendis unde animi voluptate.</p>
+                  </div>
+                </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
               <div onClick={this.optionClick.bind(this, 'Pay Direct')} className={step===2 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 PayDirect
+
+                <div className='hoverBox'>
+                  <div className='box'>
+                  </div>
+                  <div className='hoverBoxContent'>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus eum molestiae doloremque id.</p>
+                  </div>
+                </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
               <div onClick={this.optionClick.bind(this, 'Classroom Training')} className={step===3 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Classroom Training
+
+                <div className='hoverBox'>
+                  <div className='box'>
+                  </div>
+                  <div className='hoverBoxContent'>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dolor officia fugit itaque aut!</p>
+                  </div>
+                </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
               <div onClick={this.optionClick.bind(this, 'Additional Files')} className={step===4 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Additional Files
+
+                <div className='hoverBox'>
+                  <div className='box'>
+                  </div>
+                  <div className='hoverBoxContent'>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque reprehenderit natus saepe odit ab.</p>
+                  </div>
+                </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
               <div onClick={this.optionClick.bind(this, 'Network License')} className={step===5 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Network License
+
+                <div className='hoverBox'>
+                  <div className='box'>
+                  </div>
+                  <div className='hoverBoxContent'>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita hic, veritatis at sequi impedit?</p>
+                  </div>
+                </div>
               </div>
               <div onClick={this.optionClick.bind(this, 'Kounta')} className={step===5 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Kounta
+
+                <div className='hoverBox'>
+                  <div className='box'>
+                  </div>
+                  <div className='hoverBoxContent'>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quibusdam possimus, eos molestiae repellat.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@
 		margin: 0;
 		position: relative;
 
-		top: -2px;
+		top: -0px;
 	}
 	
 }
@@ -17,7 +17,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px 0;
+	padding: 10px 0;
+	font-size: 14px;
 	i {
 		color: #6100A5;
 		display: none;
@@ -30,8 +31,58 @@
 	cursor: pointer;
 	color: #000;
 	transition: color 0.2s;
-	color: #6100A5;
+	color: #EC0677;
+	position: relative;
+	:global {
+		.hoverBox {
+			display: none;
+			z-index: 9999;
+			position: absolute;
+			top: 100%;
+			background: #fff;
+			border: 1px solid #000;
+			border-radius: 5px;
+			width: 200px;
+			height: 100px;
+			.box {
+				width: 15px;
+				height: 15px;
+				background: #fff;
+				border-right: 2px solid #6100A5;
+				border-top: 2px solid #6100A5;
+				position: absolute;
+				left: 50%;
+				top: -9px;
+				transform: translateX(-50%) rotate(-45deg);
+			}
+		}
 
+		.hoverBoxContent {
+			padding: 20px;
+			p {
+				font-size: 12px;
+				margin: 0;
+				color: #6100A5;
+			}
+		}
+	}
+}
+
+.breadcrumbsOption:hover {
+	:global {
+		.hoverBox {
+			display: block;
+			left: 50%;
+			transform: translateX(-50%);
+			position: absolute;
+			top: calc(100% + 15px);
+			background: #fff;
+			border: 2px solid #6100A5;
+			border-radius: 5px;
+			width: 200px;
+			height: 100px;
+		}
+	}
 }
 
 .breadcrumbsOption:last-child {
@@ -41,7 +92,44 @@
 .breadcrumbsOptionActive {
 	font-family: 'Neutro';
 	color: #6100A5;
-	background: -webkit-linear-gradient(#6100A5, #EC0677);
+	background: -webkit-linear-gradient(left, #6100A5, #EC0677);
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: transparent;
+
+	  :global {
+	  	.hoverBox {
+	  		background: initial;
+	  		-webkit-background-clip: initial;
+	  -webkit-text-fill-color: initial;
+	  		/*display: none;*/
+	  		position: absolute;
+	  		top: 100%;
+	  		background: #fff;
+	  		border: 1px solid #000;
+	  		border-radius: 5px;
+	  		width: 200px;
+	  		height: 100px;
+	  		.box {
+	  			width: 15px;
+	  			height: 15px;
+	  			background: #fff;
+	  			border-right: 2px solid #6100A5;
+	  			border-top: 2px solid #6100A5;
+	  			position: absolute;
+	  			left: 50%;
+	  			top: -9px;
+	  			transform: translateX(-50%) rotate(-45deg);
+	  		}
+	  	}
+
+	  	.hoverBoxContent {
+	  		padding: 20px;
+	  		p {
+	  			font-size: 12px;
+
+	  			font-family: 'Neutro-light';
+	  			margin: 0;
+	  		}
+	  	}
+	  }
 }

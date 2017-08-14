@@ -13,21 +13,26 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
+  withRouter,
+  Redirect
 } from 'react-router-dom'
 
-console.log(Router, Route, Link)
 
 ReactDOM.render((
-	<App Router={Router} Link={Link}>
-		<Router>
-			<div>
-				<Route path='/' exact={true} component={Home} />
-				<Route path='/step' exact={true} component={StepsBox} />
-				<Route path='/objectionHandling' exact={true} component={ObjectionHandling} />
-				<Route path='/sideMission/:title' exact={true} component={SideMissionPage} />
-			</div>
-		</Router>
-	</App>
+	<Router>
+		<Route render={({history})=>
+			<App history={history} withRouter={withRouter} Link={Link}>
+				<div>
+					<Route path='/home' exact={true} component={Home} />
+					<Route path='/step' exact={true} component={StepsBox} />
+					<Route path='/objectionHandling' exact={true} component={ObjectionHandling} />
+					<Route path='/sideMission/:title' exact={true} component={SideMissionPage} />
+
+				</div>
+			</App>
+	}/>
+			
+	</Router>
 
 	), document.getElementById('root'));
 registerServiceWorker();

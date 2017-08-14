@@ -29,7 +29,7 @@
 .breadcrumbsOptionActive {
 	font-family: 'Neutro';
 	color: #6100A5;
-	background: -webkit-linear-gradient(#6100A5, #EC0677);
+	background: -webkit-linear-gradient(left, #6100A5, #EC0677);
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: transparent;
 }

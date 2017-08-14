@@ -190,6 +190,14 @@ export default class index extends React.Component {
             </div>
           </div>
         </div>
+
+        <div style={{marginTop: 20}} className={styles.buttonContainer}>
+          <div onClick={()=>{
+          	this.props.history.push('/home')
+          }} className={styles.button5}>
+            <span>Next</span>
+          </div>
+        </div>
       </div>
     );
   }

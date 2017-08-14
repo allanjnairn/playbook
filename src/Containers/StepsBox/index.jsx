@@ -44,7 +44,7 @@ export default class index extends React.Component {
       step4 : <Step4 />,
       step5 : <Step5 />,
       step6 : <Step6 push={this.props.history.push} />,
-      step7 : <Step7 />,
+      step7 : <Step7 history={this.props.history} />,
     }
 
     let stepComponent = stepsObj['step'+step]

@@ -78,7 +78,7 @@ export default class index extends React.Component {
               </div>
             </div>
             <div className={styles.guidance}>
-              <div className={styles.handlingHeader}>
+              <div style={{backgroundColor: '#EC0677', borderColor: '#ec0677'}} className={styles.handlingHeader}>
                 <h2>Objection Handling Guidance</h2>
               </div>
               <div className={styles.handlingBody}>

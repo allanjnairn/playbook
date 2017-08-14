@@ -16,9 +16,9 @@ class App extends Component {
       <div className={styles.app}>
         <LoginPage />
 
-        <NavBar />
+        <NavBar history={this.props.history} />
         <Breadcrumbs Link={this.props.Link} />
-        <SideMissions Router={this.props.Router} Link={this.props.Link} />
+        <SideMissions history={this.props.history} Link={this.props.Link} />
 
         <div className={window.location.href.toLowerCase().includes('step') ? styles.mainBody+' '+styles.mainBodyPlus : styles.mainBody}>
           {this.props.children}

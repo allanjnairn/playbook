@@ -137,7 +137,7 @@
 	border: 5px solid transparent;
 	transition: border-color 0.3s;
 	position: relative;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 .option2:hover {
@@ -187,6 +187,13 @@
 	border: 5px solid transparent;
 	transition: border-color 0.3s;
 	position: relative;
+	overflow: hidden;
+	position: relative;
+	:global {
+		.hoverBox {
+			display: none;
+		}
+	}
 }
 
 .option3:hover {
@@ -194,7 +201,32 @@
 
 	:global {
 		.cover {
-			opacity: 0.3;
+			opacity: 0.5;
+		}
+
+		.hoverBox {
+			z-index: 99999;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #6100A5;
+		}
+
+		.hoverBoxContent {
+
+			p {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: #fff;
+			}
 		}
 	}
 }
@@ -211,7 +243,7 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: #000;
+			background: #6100A5;
 			opacity: 0;
 			z-index: 10;
 			transition: opacity 0.3s;
@@ -273,6 +305,11 @@
 		transition: color 0.3s;
 		color: #fff;
 	}
+	:global {
+		.hoverText {
+			display: none;
+		}
+	}
 }
 
 .choiceCard:hover {
@@ -280,6 +317,15 @@
 	background: #EC0677;
 	span {
 		color: #fff;
+	}
+
+	:global {
+		.hoverHidden {
+			display: none;
+		}
+		.hoverText {
+			display: block;
+		}
 	}
 }
 .choiceCardActive {
@@ -611,4 +657,10 @@
 
 .determine {
 	font-family: 'Neutro-light';
+}
+
+.objectionButton {
+	font-family: 'Neutro-light';
+	padding: 20px;
+	cursor: pointer;
 }
