@@ -51,6 +51,18 @@ export default class index extends React.Component {
 
             <div className={styles.slider}>
               <h3>How did the Mission Guide book help this call?</h3>
+              <div className={styles.numbers}>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+              </div>
              <Slider min={1} max={10} step={1} marks={1} />
             </div>
 

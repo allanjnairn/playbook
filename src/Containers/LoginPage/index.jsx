@@ -10,7 +10,7 @@ export default class index extends React.Component {
     this.state = {
       email: '',
       password: '',
-      done: true
+      done: false
     }
   }
 

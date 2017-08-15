@@ -204,7 +204,7 @@
 		  -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 		          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 		}
-		@-webkit-keyframes rcSliderTooltipZoomDownIn {
+		/*@-webkit-keyframes rcSliderTooltipZoomDownIn {
 		  0% {
 		    opacity: 0;
 		    -webkit-transform-origin: 50% 100%;
@@ -264,7 +264,7 @@
 		            transform: scale(0, 0);
 		  }
 		}
-		.rc-slider-tooltip {
+*/		.rc-slider-tooltip {
 		  position: absolute;
 		  left: -9999px;
 		  top: -9999px;
@@ -408,4 +408,10 @@
 
 .slider {
 	margin-bottom: 20px;
+}
+
+.numbers {
+	width: calc(100% + 7px);
+	display: flex;
+	justify-content: space-between;
 }
