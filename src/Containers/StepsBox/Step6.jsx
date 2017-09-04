@@ -42,10 +42,10 @@ export default class index extends React.Component {
                       <div className={styles.choiceBoxBottom6}>
                         <div className={styles.choiceBoxColumn}>
                           <h3>Current State</h3>
-                          {MainStore.state.CurrentState.map((q, ind)=>{
+                          {MainStore.state.currentState[MainStore.state.discovery[choice]].map((q, ind)=>{
                             return (
                                 <div className={styles.question}>
-                                  <div>{ind + 1}.</div> {q}
+                                  <div>•</div> {q}
                                 </div>
                               )
                           })}
@@ -54,55 +54,38 @@ export default class index extends React.Component {
                         <div className={styles.choiceBoxColumn}>
                           <h3>Future State</h3>
 
-                          {MainStore.state.FutureState.map((k, ind)=>{
+                          {MainStore.state.futureState[MainStore.state.discovery[choice]].map((k, ind)=>{
                             return (
 
                               <div className={styles.keyWord}>
-                                <div>{ind + 1}.</div> {k}
+                                <div>•</div> {k}
                               </div>
                             ) 
                           })}
                         </div>
                         <div className={styles.choiceBoxColumn}>
                           <h3>Insight</h3>
-                            <div className={styles.keyWord}>
-                              <div>
-                              People moving to this future state experience -
-                              </div>
-                            </div>
+                            {MainStore.state.insightEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
+                                                        return (
 
-                            <div className={styles.keyWord}>
-                              <div>
-                                Better A
-                              </div>
-                            </div>
-
-                            <div className={styles.keyWord}>
-                              <div>
-                                Better B
-                              </div>
-                            </div>
-                            <div className={styles.keyWord}>
-                              <div>
-                                Better C
-                              </div>
-                            </div>
+                                                          <div className={styles.keyWord}>
+                                                            <div>•</div> {k}
+                                                          </div>
+                                                        ) 
+                                                      })}
                           
                         </div>
                         <div className={styles.choiceBoxColumn}>
                           <h3>Feature</h3>
 
-                          <div className={styles.keyWord}>
-                            <div>
-                              (P) Feature A, Feature D
-                            </div>
-                          </div>
+                          {MainStore.state.featureAndBenefitAccountEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
+                            return (
 
-                           <div className={styles.keyWord}>
-                            <div>
-                              (S) Feature K, Feature C
-                            </div>
-                          </div>
+                              <div className={styles.keyWord}>
+                                <div>•</div> {k}
+                              </div>
+                            ) 
+                          })}
                           
                         </div>
                         <div className={styles.choiceBoxColumn}>

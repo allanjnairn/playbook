@@ -17,8 +17,9 @@ export default class index extends React.Component {
     super(props);
   }
 
-  chooseOption() {
+  chooseOption(e) {
     MainStore.state.step = 3
+    MainStore.state.salesPath.mission = e
     MainStore.emit('stepChange')
   }
 
@@ -31,7 +32,7 @@ export default class index extends React.Component {
           <h2>Select Your Mission Crew</h2>
           <div className={styles.options2}>
 
-            <div onClick={this.chooseOption.bind(this)} className={styles.option2}>
+            <div onClick={this.chooseOption.bind(this, 'trial')} className={styles.option2}>
               <div className={styles.option2Image}>
                 <img src={solarSystem} alt=""/>
               </div>
@@ -41,7 +42,7 @@ export default class index extends React.Component {
 
             </div>
 
-            <div onClick={this.chooseOption.bind(this)} className={styles.option2}>
+            <div onClick={this.chooseOption.bind(this, 'upsellWinback')} className={styles.option2}>
               <div className={styles.option2Image}>
                 <img src={Rocket} alt=""/>
               </div>
@@ -51,7 +52,7 @@ export default class index extends React.Component {
 
             </div>
 
-            <div onClick={this.chooseOption.bind(this)} className={styles.option2}>
+            <div onClick={this.chooseOption.bind(this, 'inboundLeads')} className={styles.option2}>
               <div className={styles.option2Image}>
                 <img src={asteroid} alt=""/>
               </div>
@@ -67,7 +68,7 @@ export default class index extends React.Component {
           <h2>Or Select The Specialized Mission</h2>
           <div className={styles.options2}>
 
-            <div onClick={this.chooseOption.bind(this)} className={styles.option2}>
+            <div onClick={this.chooseOption.bind(this, 'mmem')} className={styles.option2}>
               <div className={styles.option2Image}>
                 <img src={satellite} alt=""/>
               </div>
@@ -77,7 +78,7 @@ export default class index extends React.Component {
 
             </div>
 
-            <div onClick={this.chooseOption.bind(this)} className={styles.option2}>
+            <div onClick={this.chooseOption.bind(this, 'powerPay')} className={styles.option2}>
               <div className={styles.option2Image}>
                 <img src={ufo} alt=""/>
               </div>
@@ -87,7 +88,7 @@ export default class index extends React.Component {
 
             </div>
 
-            <div onClick={this.chooseOption.bind(this)} className={styles.option2}>
+            <div onClick={this.chooseOption.bind(this, 'mission3')} className={styles.option2}>
               <div className={styles.option2Image}>
                 <img src={moonRover} alt=""/>
               </div>

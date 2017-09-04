@@ -37,12 +37,15 @@ export default class index extends React.Component {
       newChoices.splice(where, 1)
       this.setState({choices: newChoices})
     }
+
+    console.log('nee choices', newChoices)
   }
 
   chooseOption() {
     const {choices} = this.state
     MainStore.state.step = 5
     MainStore.state.choices = choices
+    MainStore.state.salesPath.targetPoints = choices
     MainStore.emit('stepChange')
   }
 
@@ -63,10 +66,22 @@ export default class index extends React.Component {
           
             <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
 
-              <ul>
-                <li>What is your primary objective in running your business?</li>
-                <li>What part of running your business do you find the most challenging?</li>
-              </ul>
+              {MainStore.state.salesPath.mission==='mmem' ? (
+               <ul>
+                 <li>What services do you offer and who are your clients?</li>
+                 <li>What services do you offer and who are your clients?</li>
+                 <li>Can you tell me how your business is structured and how it operates?</li>
+                 <li>What tasks are the most important to the running and success of your business?</li>
+                 <li> Where do you think you have the most opportunity to improve business costs or time spent on business tasks?</li>
+               </ul>
+              ) : (
+                <ul>
+                  <li>What does your business do?</li>
+                  <li>Can you tell me how your business is structured and how it operates?</li>
+                  <li>What tasks are the most important to the running and success of your business?</li>
+                  <li> Where do you think you have the most opportunity to improve business costs or time spent on business tasks?</li>
+                </ul>
+              )}
              
               
             </div>
@@ -78,10 +93,42 @@ export default class index extends React.Component {
             </div>
           
             <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
-              <ul>
-                <li>Can you tell me about your previous accounting software experiences (likes/dislikes)?</li>
-                <li>{"What's prompted you to consider a software to manage your books?"}</li>
-              </ul>
+              
+              {MainStore.state.salesPath.mission==='trial' ? (
+                <ul>
+                  <li>What were your motivations in taking up the Trial?</li>
+                  <li>What experience(s) do you previously have using accounting software?</li>
+                  <li>What were you wanting to see or achieve during the Trial period?</li>
+                  <li>Can you tell me how you are envisioning the software helping your business? </li>
+                  <li>What do you know about cloud accounting and how it can help your business? </li>
+                </ul>
+                ) : ''}
+
+              {MainStore.state.salesPath.mission==='upsellWinback' ? (
+                <ul>
+                  <li>How do you currently use your software within your business?</li>
+                  <li>What are you impressions and experience regarding how the software supports your business?</li>
+                  <li>What parts of the software do you think you have opportunity to utilise better?</li>
+                  <li>What do you know about cloud accounting and how it is helping busineses? </li>
+                </ul>
+                ) : ''}
+
+              {MainStore.state.salesPath.mission==='inboundLeads' ? (
+                <ul>
+                  <li>What are your motivations in looking to take up MYOB software?</li>
+                  <li>What experience do you previously have using accounting software?</li>
+                  <li>Can you tell me how you are envisioning the software helping your business? </li>
+                  <li>What do you know about cloud accounting and how it is helping busineses? </li>
+                </ul>
+                ) : ''}
+
+              {MainStore.state.salesPath.mission==='mmem' ? (
+                <ul>
+                  <li>What experience do you have using accounting software?</li>
+                  <li>What do you know about cloud accounting and how it is helping busineses?</li>
+                </ul>
+                ) : ''}
+
             </div>
           </div>
         </div>

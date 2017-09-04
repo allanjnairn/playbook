@@ -17,8 +17,9 @@ export default class index extends React.Component {
   }
 
 
-  chooseOption() {
+  chooseOption(e) {
     MainStore.state.step = 4
+    MainStore.state.salesPath.industry = e
     MainStore.emit('stepChange')
   }
 
@@ -29,7 +30,7 @@ export default class index extends React.Component {
       <div className={styles.step3}>
         <h2>What Does Your Client Do?</h2>
         <div className={styles.options3}>
-          <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
+          <div onClick={this.chooseOption.bind(this, 'trade')} className={styles.option3}>
             <div className={styles.option3Image}>
               <div className='cover'>
               </div>
@@ -40,12 +41,12 @@ export default class index extends React.Component {
             </div>
             <div className='hoverBox'>
               <div className='hoverBoxContent'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ipsam delectus totam commodi numquam dolore, odit, repellendus sed assumenda fugit aperiam rerum, reprehenderit accusantium.</p>
+                <p>Plumber, Bricklayer, Electrician, Landscaper, Renderer, Motor Mechanic, Carpenter, Baker</p>
               </div>
             </div>
           </div>
 
-          <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
+          <div onClick={this.chooseOption.bind(this, 'hospitality')} className={styles.option3}>
             <div className={styles.option3Image}>
               <div className='cover'>
               </div>
@@ -56,12 +57,12 @@ export default class index extends React.Component {
             </div>
             <div className='hoverBox'>
               <div className='hoverBoxContent'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur ut assumenda dignissimos libero, in. Obcaecati iure aspernatur soluta cum odio quibusdam doloremque! Id?</p>
+                <p>Catering, Motels, Hotels, Hostels, Serviced Appartments, Caravan Parks, Accommodation, B&B, Resorts, Cafés, Restaurants</p>
               </div>
             </div>
           </div>
 
-          <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
+          <div onClick={this.chooseOption.bind(this, 'retail')} className={styles.option3}>
             <div className={styles.option3Image}>
               <div className='cover'>
               </div>
@@ -72,12 +73,12 @@ export default class index extends React.Component {
             </div>
             <div className='hoverBox'>
               <div className='hoverBoxContent'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ad quibusdam nulla temporibus assumenda, odit alias sint debitis officiis! Eos, vel iste consequatur rerum!</p>
+                <p>Speciality Stores, Department Stores, Supermarkets, Conveniance Stores, Online Stores, Warehouse Sellers, Food Outlets, Goods Suppliers, Parts Manufacturers</p>
               </div>
             </div>
           </div>
 
-          <div onClick={this.chooseOption.bind(this)} className={styles.option3}>
+          <div onClick={this.chooseOption.bind(this, 'professionalServices')} className={styles.option3}>
             <div className={styles.option3Image}>
               <div className='cover'>
               </div>
@@ -88,7 +89,7 @@ export default class index extends React.Component {
             </div>
             <div className='hoverBox'>
               <div className='hoverBoxContent'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellendus est, autem incidunt, consectetur alias officia voluptatem quasi culpa nobis eligendi eaque corporis, sapiente.</p>
+                <p>Accountant & Tax Services, Medical Practitioners, Marketing Services, Education and Training, Cleaning Services, Fitness Trainers, IT Services, Legal Services, Security Services, Real-Estate Agents, Entertainers, Couriers, Storage Houses, Car Rentals/Hire</p>
               </div>
             </div>
           </div>

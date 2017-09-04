@@ -11,8 +11,9 @@ export default class index extends React.Component {
   }
 
 
-  chooseOption() {
+  chooseOption(e) {
     MainStore.state.step = 2
+    MainStore.state.salesPath.missionTeam = e
     MainStore.emit('stepChange')
   }
 
@@ -26,7 +27,7 @@ export default class index extends React.Component {
 
         <div className={styles.options}>
           <div className={styles.optionsBG}>
-            <div onClick={this.chooseOption.bind(this)} className={styles.option}>
+            <div onClick={this.chooseOption.bind(this, 'sales')} className={styles.option}>
               <div className={styles.optionImage}>
                 <div className='cover'>
                 </div>
@@ -39,7 +40,7 @@ export default class index extends React.Component {
           </div>
 
           <div className={styles.optionsBG}>
-            <div onClick={this.chooseOption.bind(this)} className={styles.option}>
+            <div onClick={this.chooseOption.bind(this, 'support')} className={styles.option}>
               <div className={styles.optionImage}>
                 <div className='cover'>
                 </div>
