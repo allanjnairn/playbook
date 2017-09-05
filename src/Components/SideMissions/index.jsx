@@ -41,7 +41,7 @@ export default class index extends React.Component {
 
     return (
       <div>
-        {window.location.href.toLowerCase().includes('step')||window.location.href.toLowerCase().includes('side') ? (
+        {window.location.href.toLowerCase().includes('side') ? (
           <div className={styles.breadcrumbs}>
             <div className={styles.breadcrumbsContent}>
               <h3>Side Mission Options:</h3>

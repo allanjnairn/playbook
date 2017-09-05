@@ -52,13 +52,27 @@
 	}
 }
 
+.sideMission {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: auto;
+	margin-right: 20px;
+	img {
+		width: 40px;
+	}
+	h3 {
+		font-size: 12px;
+		font-family: 'Neutro-light';
+	}
+}
 
 .objection {
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-left: auto;
 	margin-right: 0px;
 	img {
 		width: 40px;

@@ -371,7 +371,9 @@
 
 .choiceBox {
 	width: 100%;
+	position: relative;
 	h2 {
+		position: relative;
 		cursor: pointer;
 		background: #6100A5;
 		border: 2px solid #6100A5;
@@ -429,17 +431,17 @@
 }
 
 .choiceBoxQuestions {
-	max-width: 600px;
+	max-width: 500px;
 	padding-right: 20px;
 }
 
 .choiceBoxKeyWords {
-	width: 400px;
+	width: 500px;
 
 }
 
 .choiceBoxColumn {
-	max-width: calc(20% - 5px);
+	max-width: calc(25% - 5px);
 	background: #eee;
 	border-radius: 10px;
 	padding: 20px;	
@@ -664,4 +666,52 @@
 	font-family: 'Neutro-light';
 	padding: 20px;
 	cursor: pointer;
+}
+
+
+.productChoices {
+	width: 500px;
+	margin-bottom: 20px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: calc(100% + 2px);
+}
+
+.line {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 10px;
+	width: 100%;
+	background: #EC0677;
+	z-index: 0;
+}
+
+.productChoicesContent {
+	width: 100%;
+	max-width: 800px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.productChoice {
+	z-index: 10;
+	cursor: pointer;
+	background: #ccc;
+	border: 2px solid #ccc;
+	color: #fff;
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 20px;
+	margin: 10px 0;
+	font-size: 15px;
+	margin-left: 40px;
+	transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.productChoiceActive {
+	background: #EC0677;
+	border: 2px solid #EC0677;
 }
