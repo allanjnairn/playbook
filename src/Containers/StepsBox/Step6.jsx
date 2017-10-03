@@ -183,10 +183,6 @@ export default class index extends React.Component {
           })}
         </div>
 
-        <div onClick={()=>{this.props.push('/objectionHandling')}} className={styles.objectionButton}>
-          <span>Objection Handling</span>
-        </div>
-
         <div className={styles.buttonContainer}>
           <div onClick={this.chooseOption.bind(this)} className={styles.button5}>
             <span>Next</span>

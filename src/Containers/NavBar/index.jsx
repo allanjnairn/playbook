@@ -14,7 +14,7 @@ export default class index extends React.Component {
   }
 
   sideMissionClick() {
-    this.props.history.push('/sideMission')
+    this.props.history.push('/sideMission/Cloud Services')
   }
 
   render() {
@@ -36,10 +36,6 @@ export default class index extends React.Component {
             <h3>Side Missions</h3>
           </div>
 
-          <div onClick={this.objectionClick.bind(this)} className={styles.objection}>
-            <img src={meteorites} alt=""/>
-            <h3>Objection Handling</h3>
-          </div>
 
           <div className={styles.navOptions}> 
             <span>Settings</span>
@@ -50,3 +46,8 @@ export default class index extends React.Component {
     );
   }
 }
+
+// <div onClick={this.objectionClick.bind(this)} className={styles.objection}>
+//   <img src={meteorites} alt=""/>
+//   <h3>Objection Handling</h3>
+// </div>

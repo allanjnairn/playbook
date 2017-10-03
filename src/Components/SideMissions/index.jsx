@@ -46,7 +46,7 @@ export default class index extends React.Component {
             <div className={styles.breadcrumbsContent}>
               <h3>Side Mission Options:</h3>
 
-              <div onClick={this.optionClick.bind(this, 'Cloud Services')} className={step===0 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+              <div onClick={this.optionClick.bind(this, 'Cloud Services')} className={window.location.href.toLowerCase().includes('cloud') ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Cloud Services
 
                 <div className='hoverBox'>
@@ -58,7 +58,7 @@ export default class index extends React.Component {
                 </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
-              <div onClick={this.optionClick.bind(this, 'Pay Direct')} className={step===2 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+              <div onClick={this.optionClick.bind(this, 'Pay Direct')} className={window.location.href.toLowerCase().includes('pay') ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 PayDirect
 
                 <div className='hoverBox'>
@@ -70,7 +70,7 @@ export default class index extends React.Component {
                 </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
-              <div onClick={this.optionClick.bind(this, 'Classroom Training')} className={step===3 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+              <div onClick={this.optionClick.bind(this, 'Classroom Training')} className={window.location.href.toLowerCase().includes('classroom') ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Classroom Training
 
                 <div className='hoverBox'>
@@ -82,7 +82,7 @@ export default class index extends React.Component {
                 </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
-              <div onClick={this.optionClick.bind(this, 'Additional Files')} className={step===4 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+              <div onClick={this.optionClick.bind(this, 'Additional Files')} className={window.location.href.toLowerCase().includes('additional') ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Additional Files
 
                 <div className='hoverBox'>
@@ -94,7 +94,7 @@ export default class index extends React.Component {
                 </div>
               </div>
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
-              <div onClick={this.optionClick.bind(this, 'Network License')} className={step===5 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+              <div onClick={this.optionClick.bind(this, 'Network License')} className={window.location.href.toLowerCase().includes('network') ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Network License
 
                 <div className='hoverBox'>
@@ -105,7 +105,7 @@ export default class index extends React.Component {
                   </div>
                 </div>
               </div>
-              <div onClick={this.optionClick.bind(this, 'Kounta')} className={step===5 ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
+              <div onClick={this.optionClick.bind(this, 'Kounta')} className={window.location.href.toLowerCase().includes('kounta') ? styles.breadcrumbsOption+' '+styles.breadcrumbsOptionActive : styles.breadcrumbsOption}>
                 Kounta
 
                 <div className='hoverBox'>
