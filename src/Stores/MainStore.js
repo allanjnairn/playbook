@@ -9,6 +9,16 @@ class MainStore extends EventEmitter {
 			step: 1,
 
 			discovery: ['Banking', 'Business Expenses', 'Invoicing', 'Managing Cash Flow', 'Managing Projects & Jobs', 'Managing Staff & Payroll', 'Managing Stock & Suppliers', 'Managing Tax', 'Performance Reporting', 'Quoting'],
+			discoveryHover: ["Balancing accounts, maintaining budgets and performing reconciliation relating to money in & out of the business",
+							"Keeping on top of money-spent, money-owing, budgeting and numbers relating to business expenses",
+							"Charging customers for services, keeping track of work done and money-owed to the business",
+							"Turn-around time and management of payment from clients for services delivered by the business",
+							"Tracking and managing costs, spend, time spent and stock across concurrent business projects",
+							"Looking after all pay, leave and super obligations for business employees",
+							"Managing and keeping on top of stock in/out, levels, pricing, and trends",
+							"Maintaining accurate, timely and compliant records regarding ATO obligations",
+							"Visibility of key metrics and numbers that support decision making and timely action in the business",
+							"Providing an estimate of service charges to potential and prospective customers"],
 			choices: [],
 
 			questions: {

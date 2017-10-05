@@ -3,6 +3,7 @@ import styles from './StepsBox.css'
 import Sales from '../../Images/call-centre-ml-fml-238.jpg'
 import Support from '../../Images/callcentre-male-442.jpg'
 import MainStore from '../../Stores/MainStore.js'
+import Editable from '../../Components/Editable'
 
 
 export default class index extends React.Component {
@@ -65,22 +66,21 @@ export default class index extends React.Component {
             </div>
           
             <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
-
+              
               {MainStore.state.salesPath.mission==='mmem' ? (
-               <ul>
-                 <li>What services do you offer and who are your clients?</li>
-                 <li>What services do you offer and who are your clients?</li>
-                 <li>Can you tell me how your business is structured and how it operates?</li>
-                 <li>What tasks are the most important to the running and success of your business?</li>
-                 <li> Where do you think you have the most opportunity to improve business costs or time spent on business tasks?</li>
-               </ul>
+                <div>
+                  <Editable text='What services do you offer and who are your clients?' />
+                  <Editable text='What services do you offer and who are your clients?' />
+                  <Editable text='What services do you offer and who are your clients?' />
+                  <Editable text='What services do you offer and who are your clients?' />
+                </div>
               ) : (
-                <ul>
-                  <li>What does your business do?</li>
-                  <li>Can you tell me how your business is structured and how it operates?</li>
-                  <li>What tasks are the most important to the running and success of your business?</li>
-                  <li> Where do you think you have the most opportunity to improve business costs or time spent on business tasks?</li>
-                </ul>
+                <div>
+                  <Editable text='What services do you offer and who are your clients?' />
+                  <Editable text='What services do you offer and who are your clients?' />
+                  <Editable text='What services do you offer and who are your clients?' />
+                  <Editable text='What services do you offer and who are your clients?' />
+                </div>
               )}
              
               
@@ -148,7 +148,7 @@ export default class index extends React.Component {
                 <div onClick={this.cardClick.bind(this, index)} className={chosen ? styles.choiceCard+' '+styles.choiceCardActive : styles.choiceCard}>
                   <span className='hoverHidden'>{e}</span>
                   <div className='hoverText'>
-                    <span>Lorem ipsum dolor.</span>
+                    <span>{MainStore.state.discoveryHover[index]}</span>
                   </div>
                 </div>
               )
@@ -162,3 +162,5 @@ export default class index extends React.Component {
     );
   }
 }
+
+

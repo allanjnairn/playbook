@@ -31,10 +31,7 @@ export default class index extends React.Component {
             </div>
           </div>
 
-          <div onClick={this.sideMissionClick.bind(this)} className={styles.sideMission}>
-            <img src={sideMission} alt=""/>
-            <h3>Side Missions</h3>
-          </div>
+          
 
 
           <div className={styles.navOptions}> 
@@ -46,6 +43,11 @@ export default class index extends React.Component {
     );
   }
 }
+
+// <div onClick={this.sideMissionClick.bind(this)} className={styles.sideMission}>
+//   <img src={sideMission} alt=""/>
+//   <h3>Side Missions</h3>
+// </div>
 
 // <div onClick={this.objectionClick.bind(this)} className={styles.objection}>
 //   <img src={meteorites} alt=""/>

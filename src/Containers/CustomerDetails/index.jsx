@@ -16,6 +16,10 @@ export default class index extends React.Component {
     }
   }
 
+  returnToHome() {
+    this.props.push('/step')
+  }
+
   render() {
     const {clientID, firstName, lastName, phone, email} = this.state
     return (
@@ -69,6 +73,11 @@ export default class index extends React.Component {
           </form>
 
          
+         <div className={styles.buttonContainer}>
+           <div onClick={this.returnToHome.bind(this)} className={styles.button5}>
+             <span>Return to Home</span>
+           </div>
+         </div>
 
         </div>
       </div>

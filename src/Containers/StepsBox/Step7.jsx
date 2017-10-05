@@ -8,6 +8,9 @@ import MainStore from '../../Stores/MainStore.js'
 export default class index extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      activeHeader: 1
+    }
   }
 
 
@@ -17,39 +20,111 @@ export default class index extends React.Component {
   }
 
   render() {
+    const {activeHeader} = this.state
 
 
     return (
       <div className={styles.step6}>
-      	<h2>Product: Essentials</h2>
-      	<div className={styles.outcomes}>
+      	
+        <div className={styles.plans}>
+          <div className={styles.plansTop}>
 
-      		{MainStore.state.choices.map((e)=>{
-      		      			return (
-      		      				<div className={styles.outcome}>
-      		      					<div className={styles.outcomeHeader}>
-      		      						<h2>{MainStore.state.discovery[e]}</h2>
-      		      					</div>
-      		
-      		      					<div className={styles.outcomePoints}>
-      		      						<div className={styles.outcomePoint}>
-      		      							Feature A - More time and less stress when doing task
-      		      						</div>
-      		      						<div className={styles.outcomePoint}>
-      		      							Feature D - Less resource requirements when doing
-      		      						</div>
-      		      						<div className={styles.outcomePoint}>
-      		      							Feature K - See what you are doing and make better decisions
-      		      						</div>
-      		      						<div className={styles.outcomePoint}>
-      		      							Feature C - Allow you to do other stuff
-      		      						</div>
-      		      					</div>
-      		      				</div>
-      		      				)
-      		      		})}
-      	</div>
+            <div onClick={()=>{this.setState({activeHeader: 1})}} className={activeHeader===1 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}> 
+              <h2>Essentials</h2>
+              <div className='pointer'>
+              </div>
+            </div>
 
+            <div onClick={()=>{this.setState({activeHeader: 2})}} className={activeHeader===2 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}>
+              <h2>AccountRight</h2> 
+              <div className='pointer'>
+              </div>
+            </div>
+
+            <div onClick={()=>{this.setState({activeHeader: 3})}} className={activeHeader===3 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}> 
+              <h2>AccountEdge</h2>
+              <div className='pointer'>
+              </div>
+            </div>
+
+          </div>
+
+          <div className={styles.plansBottom}>
+            <h3>Features</h3>
+
+            <div>
+             {activeHeader===1 ? (
+                <ul>
+                  {MainStore.state.choices.map((choice, index)=>{
+                    return (
+                      <div>
+                        {MainStore.state.featureAndBenefitAccountEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
+
+                          if (ind<2) {
+                            return (
+
+                              <li>
+                                {k}
+                              </li>
+                              )
+                          }
+                        })}
+                      </div>
+                      )
+                  }) }
+                </ul>
+              ) : ''}
+             {activeHeader===2 ? (
+                <ul>
+                  {MainStore.state.choices.map((choice, index)=>{
+                    return (
+                      <div>
+                        {MainStore.state.featureAndBenefitAccountRight[MainStore.state.discovery[choice]].map((k, ind)=>{
+
+                          if (ind<2) {
+                            return (
+
+                              <li>
+                                {k}
+                              </li>
+                              )
+                          }
+                        })}
+                      </div>
+                      )
+                  }) }
+                </ul>
+              ) : ''}
+             {activeHeader===3 ? (
+                <ul>
+                  {MainStore.state.choices.map((choice, index)=>{
+                    return (
+                      <div>
+                        {MainStore.state.featureAndBenefitAccountEdge[MainStore.state.discovery[choice]].map((k, ind)=>{
+
+                          if (ind<2) {
+                            return (
+
+                              <li>
+                                {k}
+                              </li>
+                              )
+                          }
+                        })}
+                      </div>
+                      )
+                  }) }
+                </ul>
+              ) : ''}
+            </div>
+
+            <div className={styles.plansBottomLeft}>
+            </div>
+            <div className={styles.plansBottomRight}>
+
+            </div>
+          </div>
+        </div>
 
         <div className={styles.plansContainer}>
           <div className={styles.plan}>
@@ -87,14 +162,7 @@ export default class index extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.buyingOptions}>
-                <div className={styles.BuyNow}>
-                  <span>Buy Now</span>
-                </div>
-                <div className={styles.Trial}>
-                  <span>Try free for 30 days</span>
-                </div>
-              </div>
+
             </div>
           </div>
 
@@ -133,14 +201,7 @@ export default class index extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.buyingOptions}>
-                <div className={styles.BuyNow}>
-                  <span>Buy Now</span>
-                </div>
-                <div className={styles.Trial}>
-                  <span>Try free for 30 days</span>
-                </div>
-              </div>
+              
             </div>
           </div>
 
@@ -179,14 +240,7 @@ export default class index extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.buyingOptions}>
-                <div className={styles.BuyNow}>
-                  <span>Buy Now</span>
-                </div>
-                <div className={styles.Trial}>
-                  <span>Try free for 30 days</span>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -202,3 +256,32 @@ export default class index extends React.Component {
     );
   }
 }
+
+
+// <div className={styles.outcomes}>
+
+//   {MainStore.state.choices.map((e)=>{
+//               return (
+//                 <div className={styles.outcome}>
+//                   <div className={styles.outcomeHeader}>
+//                     <h2>{MainStore.state.discovery[e]}</h2>
+//                   </div>
+  
+//                   <div className={styles.outcomePoints}>
+//                     <div className={styles.outcomePoint}>
+//                       Feature A - More time and less stress when doing task
+//                     </div>
+//                     <div className={styles.outcomePoint}>
+//                       Feature D - Less resource requirements when doing
+//                     </div>
+//                     <div className={styles.outcomePoint}>
+//                       Feature K - See what you are doing and make better decisions
+//                     </div>
+//                     <div className={styles.outcomePoint}>
+//                       Feature C - Allow you to do other stuff
+//                     </div>
+//                   </div>
+//                 </div>
+//                 )
+//             })}
+// </div>

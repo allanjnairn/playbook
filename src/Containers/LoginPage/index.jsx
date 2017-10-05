@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LoginPage.css'
 import graphic from '../../Images/MYOB Login Page.png'
-
+import axios from 'axios'
 
 export default class index extends React.Component {
 
@@ -10,7 +10,8 @@ export default class index extends React.Component {
     this.state = {
       email: '',
       password: '',
-      done: false
+      done: false,
+      signUp: false
     }
   }
 
@@ -20,8 +21,17 @@ export default class index extends React.Component {
 
   }
 
+  signUp() {
+    axios.post('localhost:1337/user', {email: this.state.email, password: this.state.password}).then((result)=>{
+      console.log('result', result)
+    }).catch((err)=>{
+      console.log('err', err)
+    })
+
+  }
+
   render() {
-    const {email, password} = this.state
+    const {email, password, signUp} = this.state
     console.log(this.props)
     return (
       <div>
@@ -41,8 +51,18 @@ export default class index extends React.Component {
                   <button style={{display: 'none'}}></button>
                 </form>
 
-                <div onClick={()=>{this.setState({done: true})}} className={styles.loginButton}>
-                  <span>Log In</span>
+                {signUp ? (
+                    <div onClick={this.signUp.bind(this)} className={styles.loginButton}>
+                      <span>Sign Up</span>
+                    </div>
+                  ) : (
+                    <div onClick={this.submit.bind(this)} className={styles.loginButton}>
+                      <span>Log In</span>
+                    </div>
+                  )}
+
+                <div onClick={()=>{this.setState({signUp: !signUp})}} className={styles.orButton}>
+                  <span>or {signUp ? 'log in' : 'sign up'}</span>
                 </div>
 
               </div>

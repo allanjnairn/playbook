@@ -76,6 +76,12 @@
 	}
 }
 
+.orButton {
+	font-family: 'Neutro-light';
+	margin-top: 4px;
+	cursor: pointer;
+}
+
 .loginButton:hover {
 	background: #EC0677;
 }

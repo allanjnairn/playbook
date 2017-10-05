@@ -238,6 +238,7 @@
 		width: 100%;
 		display: block;
 		max-height: 217px;
+		filter: brightness(80%);
 	}
 	:global {
 		.cover {
@@ -309,6 +310,10 @@
 	:global {
 		.hoverText {
 			display: none;
+			span {
+				font-size: 13px;
+				width: 100%;
+			}
 		}
 	}
 }
@@ -326,6 +331,7 @@
 		}
 		.hoverText {
 			display: block;
+
 		}
 	}
 }
@@ -714,4 +720,78 @@
 .productChoiceActive {
 	background: #EC0677;
 	border: 2px solid #EC0677;
+}
+
+.plans {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.plansBottom {
+	margin-bottom: 20px;
+	
+	justify-content: space-between;
+	background: #eee;
+	padding: 20px;
+	border-radius: 10px;
+	h3 {
+		margin-top: 0;
+	}
+	ul {
+		display: flex;
+		font-weight: 300;
+		font-family: 'Neutro-light';
+		li {
+			font-family: 'Neutro-light';
+			padding: 15px;
+		}
+	}
+}
+
+
+.plansTop {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.plansTopHeader {
+	position: relative;
+	width: 30%;
+	cursor: pointer;
+	background: #ccc;
+	border: 2px solid #ccc;
+	color: #fff;
+	display: inline-block;
+	padding: 5px 15px;
+	border-radius: 20px;
+	margin: 10px 0;
+	h2 {
+		font-size: 16px;
+	}
+	transition: border-color 0.2s, background 0.2s, color 0.2s;
+
+	:global {
+		.pointer {
+			display: none;
+			position: absolute;
+			background: #EC0677;
+			width: 7px;
+			height: 10px;
+			top: calc(100% + 2px);
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+.plansTopHeaderActive {
+	:global {
+		.pointer {
+			display: block;
+		}
+	}
+	background: #EC0677;
+	border-color: #EC0677;
 }
