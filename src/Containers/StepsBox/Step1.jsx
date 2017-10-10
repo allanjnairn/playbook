@@ -40,14 +40,15 @@ export default class index extends React.Component {
           </div>
 
           <div className={styles.optionsBG}>
-            <div onClick={this.chooseOption.bind(this, 'support')} className={styles.option}>
+            <div onClick={()=>{}} className={styles.option}>
               <div className={styles.optionImage}>
                 <div className='cover'>
                 </div>
                 <img src={Support} alt=""/>
               </div>
               <div className={styles.optionText+' '+styles.optionText2}>
-                <span>SME Support</span>
+                <span className='notHover'>SME Support</span>
+                <span className='hover'>Coming Soon</span>
               </div>
             </div>
           </div>

@@ -89,6 +89,32 @@
 		font-size: 30px;
 		color: #6100A5;
 	}
+	:global {
+		.notHover {
+
+		}
+
+		.hover {
+			display: none;
+		}
+
+	}
+}
+
+.optionsBG:hover {
+	:global {
+		.notHover {
+			display: none;
+		}
+
+		.hover {
+			display: block;
+		}
+	}
+}
+
+.bold {
+	font-family: 'Neutro';
 }
 
 .optionText2 {
@@ -343,6 +369,23 @@
 	}
 }
 
+.sortBullets {
+	ul {
+	  margin: 0;
+	  padding: 0;
+	  list-style-type: none;
+	}
+	ul > li {
+	  position: relative;
+	  padding-left: 12px;
+	}
+	ul > li:before {
+	  content: "•";
+	  position: absolute;
+	  left: 0;
+	}
+}
+
 .button4 {
 	margin-top: 20px;
 	background: #6100A5;
@@ -468,6 +511,29 @@
 	margin: 5px 0;
 	div {
 		margin-right: 10px;
+	}
+}
+
+.outcomePurpleBox {
+	text-align: center;
+}
+
+.outcomePurple {
+	text-align: center;
+	background: transparent;
+	padding: 10px 20px;
+	display: inline-block;
+	border-radius: 20px;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+	transition: background 0.2s;
+	font-size: 16px;
+	padding-bottom: 0;
+	color: #6100A5!important;
+	span {
+		font-size: 20px;
+		color: #fff!important;
 	}
 }
 

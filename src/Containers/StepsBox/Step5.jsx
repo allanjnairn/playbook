@@ -44,7 +44,7 @@ export default class index extends React.Component {
                       <div className={styles.choiceBoxBottom}>
                         <div className={styles.choiceBoxQuestions}>
                           <h3>Target Questions</h3>
-                          {MainStore.state.targetQuestions[MainStore.state.discovery[choice]].map((q, ind)=>{
+                          {MainStore.state.data.targetQuestions[MainStore.state.discovery[choice]].map((q, ind)=>{
                             return (
                                 <div className={styles.question}>
                                   <Editable text={q} first={'targetQuestions'} chosen={MainStore.state.discovery[choice]} ind={ind} />
@@ -56,7 +56,7 @@ export default class index extends React.Component {
                         <div className={styles.choiceBoxKeyWords}>
                           <h3>Targeted Information</h3>
 
-                          {MainStore.state.targetInformation[MainStore.state.discovery[choice]].map((k, ind)=>{
+                          {MainStore.state.data.targetInformation[MainStore.state.discovery[choice]].map((k, ind)=>{
                             return (
 
                               <div className={styles.keyWord}>

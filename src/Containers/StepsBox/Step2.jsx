@@ -18,9 +18,14 @@ export default class index extends React.Component {
   }
 
   chooseOption(e) {
+    
+   if (e==='powerPay'||e==='mission3'||e==='mmem') {
+
+   } else {
     MainStore.state.step = 3
     MainStore.state.salesPath.mission = e
     MainStore.emit('stepChange')
+   }
   }
 
   render() {
@@ -73,7 +78,7 @@ export default class index extends React.Component {
                 <img src={satellite} alt=""/>
               </div>
               <div className={styles.option2Text}>
-                <span>MMEM</span>
+                <span>Coming Soon</span>
               </div>
 
             </div>
@@ -83,7 +88,7 @@ export default class index extends React.Component {
                 <img src={ufo} alt=""/>
               </div>
               <div className={styles.option2Text}>
-                <span>Power Pay</span>
+                <span>Coming Soon</span>
               </div>
 
             </div>
@@ -93,7 +98,7 @@ export default class index extends React.Component {
                 <img src={moonRover} alt=""/>
               </div>
               <div className={styles.option2Text}>
-                <span>Mission 3</span>
+                <span>Coming Soon</span>
               </div>
 
             </div>

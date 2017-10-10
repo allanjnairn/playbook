@@ -1,0 +1,37 @@
+.missions {
+
+}
+
+
+.missionContainer {
+	width: 100%;
+	max-width: 800px;
+	h2 {
+		display: inline-block;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	span {
+		cursor: pointer;
+	}
+
+}
+
+.missionInner {
+	width: 100%;
+	max-height: calc(100vh - 129px);
+	overflow: scroll;
+}
+.mission {
+	padding: 8px;
+	border: 1px solid #ccc;
+	display: flex;
+	justify-content: flex-start;
+	div {
+		width: 50%;
+	}
+	span {
+		font-family: 'neutro-light';
+	}
+}

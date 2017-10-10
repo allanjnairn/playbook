@@ -21,6 +21,7 @@ export default class index extends React.Component {
   }
 
   stepChange() {
+    console.log(MainStore.state.step, 'yeahhh')
     this.setState({step: MainStore.state.step})
   }
 

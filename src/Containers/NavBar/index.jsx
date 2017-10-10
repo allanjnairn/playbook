@@ -3,6 +3,7 @@ import styles from './NavBar.css'
 import Logo from '../../Images/MYOB_logo_RGB.jpg'
 import meteorites from '../../Images/meteorites.png'
 import sideMission from '../../Images/sideMission.png'
+import MainStore from '../../Stores/MainStore.js'
 
 export default class index extends React.Component {
   constructor(props) {
@@ -15,6 +16,12 @@ export default class index extends React.Component {
 
   sideMissionClick() {
     this.props.history.push('/sideMission/Cloud Services')
+  }
+
+  signOut() {
+    window.sessionStorage.accessToken = ''
+    MainStore.state.manager = false
+    this.props.history.push('/login')
   }
 
   render() {
@@ -35,8 +42,8 @@ export default class index extends React.Component {
 
 
           <div className={styles.navOptions}> 
-            <span>Settings</span>
-            <span>Sign Out</span>
+            {MainStore.state.manager ? <span onClick={()=>{this.props.history.push('/settings')}}>Settings</span> : ''}
+            <span onClick={this.signOut.bind(this)}>Sign Out</span>
           </div>
         </div>
       </div>

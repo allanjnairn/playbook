@@ -65,7 +65,7 @@ export default class index extends React.Component {
                       <div className={styles.choiceBoxBottom6}>
                         <div className={styles.choiceBoxColumn}>
                           <h3>Current State</h3>
-                          {MainStore.state.currentState[MainStore.state.discovery[choice]].map((q, ind)=>{
+                          {MainStore.state.data.currentState[MainStore.state.discovery[choice]].map((q, ind)=>{
                             return (
                                 <div className={styles.question}>
                                   <Editable text={q} first={'currentState'} chosen={MainStore.state.discovery[choice]} ind={ind} />
@@ -77,7 +77,7 @@ export default class index extends React.Component {
                         <div className={styles.choiceBoxColumn}>
                           <h3>Future State</h3>
 
-                          {MainStore.state.futureState[MainStore.state.discovery[choice]].map((k, ind)=>{
+                          {MainStore.state.data.futureState[MainStore.state.discovery[choice]].map((k, ind)=>{
                             return (
 
                               <div className={styles.keyWord}>
@@ -89,7 +89,7 @@ export default class index extends React.Component {
                         {option===1 ? (
                           <div className={styles.choiceBoxColumn}>
                             <h3>Insight</h3>
-                              {MainStore.state.insightEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
+                              {MainStore.state.data.insightEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
                                                           return (
 
                                                             <div className={styles.keyWord}>
@@ -103,7 +103,7 @@ export default class index extends React.Component {
                         {option===2 ? (
                           <div className={styles.choiceBoxColumn}>
                             <h3>Insight</h3>
-                              {MainStore.state.insightAccountRight[MainStore.state.discovery[choice]].map((k, ind)=>{
+                              {MainStore.state.data.insightAccountRight[MainStore.state.discovery[choice]].map((k, ind)=>{
                                                           return (
 
                                                             <div className={styles.keyWord}>
@@ -117,7 +117,7 @@ export default class index extends React.Component {
                         {option===3 ? (
                           <div className={styles.choiceBoxColumn}>
                             <h3>Insight</h3>
-                              {MainStore.state.insightAccountEdge[MainStore.state.discovery[choice]].map((k, ind)=>{
+                              {MainStore.state.data.insightAccountEdge[MainStore.state.discovery[choice]].map((k, ind)=>{
                                                           return (
 
                                                             <div className={styles.keyWord}>
@@ -134,11 +134,11 @@ export default class index extends React.Component {
                             <div className={styles.choiceBoxColumn}>
                               <h3>Features</h3>
 
-                              {MainStore.state.featureAndBenefitAccountEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
+                              {MainStore.state.data.featureAndBenefitAccountEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
                                 return (
 
                                   <div className={styles.keyWord}>
-                                    <Editable text={k} first={'featureAndBenefitAccountEssentials'} chosen={MainStore.state.discovery[choice]} ind={ind} />
+                                    <Editable brackets={true} text={k} first={'featureAndBenefitAccountEssentials'} chosen={MainStore.state.discovery[choice]} ind={ind} />
                                   </div>
                                 ) 
                               })}
@@ -150,11 +150,11 @@ export default class index extends React.Component {
                             <div className={styles.choiceBoxColumn}>
                               <h3>Features</h3>
 
-                              {MainStore.state.featureAndBenefitAccountRight[MainStore.state.discovery[choice]].map((k, ind)=>{
+                              {MainStore.state.data.featureAndBenefitAccountRight[MainStore.state.discovery[choice]].map((k, ind)=>{
                                 return (
 
                                   <div className={styles.keyWord}>
-                                    <Editable text={k} first={'featureAndBenefitAccountRight'} chosen={MainStore.state.discovery[choice]} ind={ind} />
+                                    <Editable brackets={true} text={k} first={'featureAndBenefitAccountRight'} chosen={MainStore.state.discovery[choice]} ind={ind} />
                                   </div>
                                 ) 
                               })}
@@ -165,11 +165,11 @@ export default class index extends React.Component {
                             <div className={styles.choiceBoxColumn}>
                               <h3>Features</h3>
 
-                              {MainStore.state.featureAndBenefitAccountEdge[MainStore.state.discovery[choice]].map((k, ind)=>{
+                              {MainStore.state.data.featureAndBenefitAccountEdge[MainStore.state.discovery[choice]].map((k, ind)=>{
                                 return (
 
                                   <div className={styles.keyWord}>
-                                    <Editable text={k} first={'featureAndBenefitAccountEdge'} chosen={MainStore.state.discovery[choice]} ind={ind} />
+                                    <Editable brackets={true} text={k} first={'featureAndBenefitAccountEdge'} chosen={MainStore.state.discovery[choice]} ind={ind} />
                                   </div>
                                 ) 
                               })}

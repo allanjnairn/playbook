@@ -8,10 +8,8 @@ class MainStore extends EventEmitter {
 		super();
 		this.state = {
 			step: 1,
-			manager: false,
-			editing: true,
 
-			discovery: ['Banking', 'Business Expenses', 'Invoicing', 'Managing Cash Flow', 'Managing Projects & Jobs', 'Managing Staff & Payroll', 'Managing Suppliers & Stock', 'Managing Tax', 'Performance Reporting', 'Quoting'],
+			discovery: ['Banking', 'Business Expenses', 'Invoicing', 'Managing Cash Flow', 'Managing Projects & Jobs', 'Managing Staff & Payroll', 'Managing Stock & Suppliers', 'Managing Tax', 'Performance Reporting', 'Quoting'],
 			discoveryHover: ["Balancing accounts, maintaining budgets and performing reconciliation relating to money in & out of the business",
 							"Keeping on top of money-spent, money-owing, budgeting and numbers relating to business expenses",
 							"Charging customers for services, keeping track of work done and money-owed to the business",
@@ -52,25 +50,6 @@ class MainStore extends EventEmitter {
 				"Organise time with accountant to view the statements and help with P/L reporting from data"
 
 			],
-
-
-
-			"clientDiscovery": {
-				"trial": ["What does your business do?", "What services do you offer and who are your clients?", "Can you tell me how your business is structured and how it operates?", "What tasks are the most important to the running and success of your business?", "Where do you think you have the most opportunity to improve business costs or time spent on business tasks?"],
-				"upsellWinback": ["What does your business do?", "What services do you offer and who are your clients?", "Can you tell me how your business is structured and how it operates?", "What tasks are the most important to the running and success of your business?", "Where do you think you have the most opportunity to improve business costs or time spent on business tasks?"],
-				"inboundLeads": ["What does your business do?", "What services do you offer and who are your clients?", "Can you tell me how your business is structured and how it operates?", "What tasks are the most important to the running and success of your business?", "Where do you think you have the most opportunity to improve business costs or time spent on business tasks?"],
-				"mmem": ["What services do you offer and who are your clients?", "Can you tell me how your business is structured and how it operates?", "What tasks are the most important to the running and profitibility of your business?", "Where do you think you have the most opportunity to improve business costs or time spent on business tasks?"],
-
-
-			},
-			"softwareDiscovery": {
-				"trial": ["What were your motivations in taking up the Trial?", "What experience(s) do you previously have using accounting software?", "What were you wanting to see or achieve during the Trial period?", "Can you tell me how you are envisioning the software helping your business?", "What do you know about cloud accounting and how it can help your business?"],
-				"upsellWinback": ["How do you currently use your software within your business?", "What are you impressions and experience regarding how the software supports your business?", "What parts of the software do you think you have opportunity to utilise better?", "What do you know about cloud accounting and how it is helping busineses? "],
-				"inboundLeads": ["What are your motivations in looking to take up MYOB software?", "What experience do you previously have using accounting software?", "Can you tell me how you are envisioning the software helping your business?", "What do you know about cloud accounting and how it is helping busineses?"],
-				"mmem": ["What experience do you have using accounting software?", "What do you know about cloud accounting and how it is helping busineses?"],
-
-
-			},
 
 
 			targetQuestions: {
@@ -194,23 +173,13 @@ class MainStore extends EventEmitter {
 				'Managing Projects & Jobs': ["(Advanced Job Management) - Save time and make better decsions by being able to track costing, stock and spend across multiple jobs and get real-time visibility and insight  into key job performance metrics", "(Advanced Reporting) - Utilise reporting to get visibility of and track business numbers easily & whenever you need to assist in managing Projects or Jobs"],		
 			},
 
-			data: {
-
-			},
-
 
 
 			salesPath: {
-				user: '',
-				email: '',
 				missionTeam: '',
 				mission: '',
 				industry: '',
-				targetPoints: [],
-				product: '',
-				result: '',
-				clientID: '',
-				help: ''
+				targetPoints: []
 			},
 
 		}
@@ -218,56 +187,8 @@ class MainStore extends EventEmitter {
 
 	hydrate() {
 		console.log('hydrating')
-		axios.get(process.env.PUBLIC_URL+'data/getData', {headers: {"authorization" : 'Bearer '+window.sessionStorage.accessToken}}).then((result)=>{
+		axios.get('http://localhost:1337/data/getData', {headers: {"authorization" : 'Bearer '+window.sessionStorage.accessToken}}).then((result)=>{
 			console.log('result', result)
-			this.state.data = result.data
-		}).catch((err)=>{
-			console.log('error', err)
-		})
-	}
-
-	update() {
-		console.log('updating')
-		console.log(this.state.data)
-		axios.post(process.env.PUBLIC_URL+'data/updateData', {data: this.state.data}, {headers: {"authorization" : 'Bearer '+window.sessionStorage.accessToken}}).then((result)=>{
-			console.log('result', result)
-			// this.state.data = result.data
-		}).catch((err)=>{
-			console.log('error', err)
-		})
-	}
-
-	addSalesMission() {
-		console.log(this.state.salesPath)
-		let salesPath = this.state.salesPath
-		let discovery = this.state.discovery
-		var newString = ''
-		salesPath.targetPoints.map((e, ind)=>{
-			if (ind < (salesPath.targetPoints.length - 1)) {
-				newString += discovery[e]+', '
-			} else {
-				newString += discovery[e]
-			}
-		})
-		salesPath['user'] = JSON.parse(window.sessionStorage.user).id
-		salesPath['email'] = JSON.parse(window.sessionStorage.user).email
-		salesPath['targetPoints'] = newString
-		console.log(salesPath)
-		axios.post(process.env.PUBLIC_URL+'mission/create', salesPath, {headers: {"authorization" : 'Bearer '+window.sessionStorage.accessToken}}).then((result)=>{
-			console.log('result', result)
-			// this.state.data = result.data
-			this.state.salesPath = {
-				user: '',
-				email: '',
-				missionTeam: '',
-				mission: '',
-				industry: '',
-				targetPoints: [],
-				product: '',
-				result: '',
-				clientID: '',
-				help: ''
-			}
 		}).catch((err)=>{
 			console.log('error', err)
 		})

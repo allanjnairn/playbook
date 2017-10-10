@@ -26,6 +26,10 @@
 	color: #000;
 }
 
+.bold {
+	font-family: 'Neutro';
+}
+
 .save {
 	margin-left: 5px;
 	cursor: pointer;

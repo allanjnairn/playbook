@@ -5,8 +5,45 @@ import NavBar from './Containers/NavBar'
 import LoginPage from './Containers/LoginPage'
 import Breadcrumbs from './Components/Breadcrumbs'
 import SideMissions from './Components/SideMissions'
+import MainStore from './Stores/MainStore.js'
+
+console.log(process.env)
 
 class App extends Component {
+
+  componentWillMount() {
+
+    console.log('HEYLLLOOO')
+
+    let token = window.sessionStorage.accessToken 
+    if (window.sessionStorage.user) {
+      let obj = JSON.parse(window.sessionStorage.user)
+      if (obj.manager) {
+        MainStore.state.manager = true
+        MainStore.state.editing = false
+      } else {
+        MainStore.state.editing = true
+      }
+    }
+
+    if (token) {
+
+      MainStore.hydrate()
+
+
+    } else {
+      if (window.location.href.toLowerCase().includes('resetpassword')) {
+
+      } else {
+        this.props.history.push('login')
+      }
+    }
+  }
+
+  componentDidMount() {
+    // MainStore.hydrate()
+  }
+
   render() {
 
     console.log(this.props, 'asgads')
@@ -14,10 +51,10 @@ class App extends Component {
    
     return (
       <div className={styles.app}>
-        <LoginPage />
 
-        <NavBar history={this.props.history} />
-        <Breadcrumbs Link={this.props.Link} />
+
+        {window.location.href.toLowerCase().includes('login') ? '' : <NavBar history={this.props.history} />}
+        {window.location.href.toLowerCase().includes('step') ? <Breadcrumbs Link={this.props.Link} /> : ''}
         <SideMissions history={this.props.history} Link={this.props.Link} />
 
         <div className={window.location.href.toLowerCase().includes('step') ? styles.mainBody+' '+styles.mainBodyPlus : styles.mainBody}>
