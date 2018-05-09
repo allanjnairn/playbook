@@ -55,6 +55,7 @@ class MainStore extends EventEmitter {
 
 
 
+
 			"clientDiscovery": {
 				"trial": ["What does your business do?", "What services do you offer and who are your clients?", "Can you tell me how your business is structured and how it operates?", "What tasks are the most important to the running and success of your business?", "Where do you think you have the most opportunity to improve business costs or time spent on business tasks?"],
 				"upsellWinback": ["What does your business do?", "What services do you offer and who are your clients?", "Can you tell me how your business is structured and how it operates?", "What tasks are the most important to the running and success of your business?", "Where do you think you have the most opportunity to improve business costs or time spent on business tasks?"],
@@ -71,6 +72,19 @@ class MainStore extends EventEmitter {
 
 
 			},
+
+			"specialistClientDiscovery": {
+				"1": ["What does your business do?", "What services do you offer and who are your clients?", "Can you tell me how your business is structured and how it operates?", "What tasks are the most important to the running and success of your business?", "Where do you think you have the most opportunity to improve business costs or time spent on business tasks?"]
+
+
+			},
+			"specialistSoftwareDiscovery": {
+				"1": ["What were your motivations in taking up the Trial?", "What experience(s) do you previously have using accounting software?", "What were you wanting to see or achieve during the Trial period?", "Can you tell me how you are envisioning the software helping your business?", "What do you know about cloud accounting and how it can help your business?"]
+
+
+			},
+
+
 
 
 			targetQuestions: {
@@ -194,9 +208,155 @@ class MainStore extends EventEmitter {
 				'Managing Projects & Jobs': ["(Advanced Job Management) - Save time and make better decsions by being able to track costing, stock and spend across multiple jobs and get real-time visibility and insight  into key job performance metrics", "(Advanced Reporting) - Utilise reporting to get visibility of and track business numbers easily & whenever you need to assist in managing Projects or Jobs"],		
 			},
 
+
+
+
+			"callOpening": {
+				"trial": ["Do you mind if I ask some questions to find out a bit more about you, to see how we can help your business?","I can help you get maximum value from our software during your trial, I’ll need to ask you some questions though","I am the person that will be supporting you throughout your 30-day trial, do you mind if I ask you a few questions?","I am your personal software consultant to ensure you are set up for success, do you have time now for a few questions? "],
+				"upsellWinback": ["I see an opportunity for MYOB to save you both time and money through our current solutions, do you mind if I ask you a few questions?", "If you don’t mind me asking some questions, I can see how MYOB can add value to your business through our modern solutions", "I am calling to help you make an updated and informed decision about what is best for your business, do you mind if I ask you a few questions?"],
+				"inboundLeads": ["To see how we can help your business, do you mind if I ask some questions to find out a bit more about you?", "If you don’t mind me asking some questions, I can ensure we have a solution that fits your needs and sets you up for success from day one.", "I can be your personal software consultant to ensure you are set up for success, do you mind telling me a bit about your business?", "I can personally support you through your solution consideration, do you mind if I ask you a few questions?"],
+				"mmem": []
+
+			},
+
+
+			"endOpening": {
+				"trial": ["To summarise what we have discussed today, the key areas of running your business we can help with is….","With the information you have provided, we have identified the following business tasks as crucial for you and we can help with…", "After getting to know your business, we can help you improve the current way you handle…", "From what you have told me, you’ve identified a few key area of the business that you have an opportunity to improve, these are…."],
+				"upsellWinback": ["To summarise what we have discussed today, the key areas of running your business we can help with is….","With the information you have provided, we have identified the following business tasks as crucial for you and we can help with…", "After getting to know your business, we can help you improve the current way you handle…", "From what you have told me, you’ve identified a few key area of the business that you have an opportunity to improve, these are…."],
+				"inboundLeads": ["To summarise what we have discussed today, the key areas of running your business we can help with is….","With the information you have provided, we have identified the following business tasks as crucial for you and we can help with…", "After getting to know your business, we can help you improve the current way you handle…", "From what you have told me, you’ve identified a few key area of the business that you have an opportunity to improve, these are…."],
+				"mmem": []
+
+			},
+
+			"endClosing": {
+				"trial": ["By adopting (recommended product) you are embracing a 21st century accounting solution for your 21st century business.  Are you ready to take your business a step forward into the future?", "We’ve come to the conclusion that (recommended product) has the features that will help you align your business with 21st century online technology.  Are you ready to leverage this evolving technology to make running your business easier?", "As a technology company that fully embraces the inevitable evolution of software capability, MYOB is committed to supporting your evolving business needs with (recommended product). Can I get you on top of the accounting technology curve that will help drive your businesses success?", "We have identified (recommended product) is tailor made for your future business state.  At MYOB, we have a 25 year tradition of helping businesses succeed.  Do you want to integrate our businesses success with yours?"],
+				"upsellWinback": ["By adopting (recommended product) you are embracing a 21st century accounting solution for your 21st century business.  Are you ready to take your business a step forward into the future?", "We’ve come to the conclusion that (recommended product) has the features that will help you align your business with 21st century online technology.  Are you ready to leverage this evolving technology to make running your business easier?", "As a technology company that fully embraces the inevitable evolution of software capability, MYOB is committed to supporting your evolving business needs with (recommended product). Can I get you on top of the accounting technology curve that will help drive your businesses success?", "We have identified (recommended product) is tailor made for your future business state.  At MYOB, we have a 25 year tradition of helping businesses succeed.  Do you want to integrate our businesses success with yours?"],
+				"inboundLeads": ["By adopting (recommended product) you are embracing a 21st century accounting solution for your 21st century business.  Are you ready to take your business a step forward into the future?", "We’ve come to the conclusion that (recommended product) has the features that will help you align your business with 21st century online technology.  Are you ready to leverage this evolving technology to make running your business easier?", "As a technology company that fully embraces the inevitable evolution of software capability, MYOB is committed to supporting your evolving business needs with (recommended product). Can I get you on top of the accounting technology curve that will help drive your businesses success?", "We have identified (recommended product) is tailor made for your future business state.  At MYOB, we have a 25 year tradition of helping businesses succeed.  Do you want to integrate our businesses success with yours?"],
+				"mmem": []
+
+			},
+
+			"pitchGuidanceEssentials": {
+				'Banking': ["Automate your banking tasks, save you both time and money while also reducing the risk of human error."],
+				'Business Expenses': ["Give you visibility of your business expenses by providing accurate data in real time, whilst also allowing you to collaborate with your Accountant."],
+				'Invoicing': ["Help you turn around customer payments faster, using mobile invoicing and various payment options to improve cashflow."],
+				'Managing Cash Flow': ["Help the business manage cashflow better, provide real-time business visibility and save you time and money through task automation."],
+				'Managing Tax': ["Allow you to collaborate effortlessly with your Accountant but also help you file tax more accurately and efficiently, directly through to the IRD. "],
+				'Performance Reporting': ["Give you access to good reporting, resulting in better business decisions, improved profitability and business growth."],
+				'Managing Staff & Payroll': ["Help the business stay compliant with payroll legislation but also save you time and money through automated payroll tasks."],
+				'Quoting': ["Help streamline your quote to invoice process, reducing manual tasks that exist in your current state."],
+				'Managing Suppliers & Stock': ["If Managing Stock & Suppliers is a critical task - please promote AR to the client"],
+				'Managing Projects & Jobs': ["If Managing Jobs or Projects is a critical task - please promote AR to the client"],
+			},
+			"pitchGuidanceAccountRight": {
+				'Banking': ["Automate your banking tasks, save you both time and money while also reducing the risk of human error."],
+				'Business Expenses': ["Give you visibility of your business expenses by providing accurate data in real time, whilst also allowing you to collaborate with your Accountant."],
+				'Invoicing': ["Help you turn around customer payments faster, using mobile invoicing and various payment options to improve cashflow."],
+				'Managing Cash Flow': ["Help the business manage cashflow better, provide real-time business visibility and save you time and money through task automation."],
+				'Managing Tax': ["Allow allow you to collaborate effortlessly with your Accountant but also help you file tax more accurately and efficiently, directly through to the IRD. "],
+				'Performance Reporting': ["Give you access to good reporting, resulting in better business decisions, improved profitability and business growth."],
+				'Managing Staff & Payroll': ["Help the business stay compliant with payroll legislation but also save you time and money through automated payroll tasks."],
+				'Quoting': ["Help streamline your quote to invoice process, reducing manual tasks that exist in your current state."],
+				'Managing Suppliers & Stock': ["Allow you to have greater visibility over your supplier relationships and associated stock levels."],
+				'Managing Projects & Jobs': ["Help you divide your income between jobs and provide you with visibility against budgets and profits."],
+			},
+			"pitchGuidanceAccountEdge": {
+				'Banking': ["Simplify your banking tasks, save you both time and money while also reducing the risk of human error."],
+				'Business Expenses': ["Give you visibility of your business expenses by providing accurate data in real time."],
+				'Invoicing': ["Help you turn around customer payments faster, using various payment options to improve cashflow."],
+				'Managing Cash Flow': ["Help the business manage cashflow better by providing real-time business visibility."],
+				'Managing Tax': ["Help you file tax more accurately and efficiently, through to the ATO. "],
+				'Performance Reporting': ["Give you access to good reporting, resulting in better business decisions, improved profitability and business growth."],
+				'Managing Staff & Payroll': ["Help the business stay compliant with payroll legislation but also save you time and money through automated payroll tasks."],
+				'Quoting': ["Help streamline your quote to invoice process, reducing manual tasks that exist in your current state"],
+				'Managing Suppliers & Stock': ["Allow you to have greater visibility over your supplier relationships and associated stock levels."],
+				'Managing Projects & Jobs': ["Help you divide your income between jobs and provide you with visibility against budgets and profits."],
+			},
+
+			specialistQuestions: {
+				'1': ["How do you currently manage and track your business' cash flow?", "How do you currently manage and track your business' cash flow?", "How do you currently manage and track your business' cash flow?", "How do you currently manage and track your business' cash flow?", "How do you currently manage and track your business' cash flow?", "How do you currently manage and track your business' cash flow?"]
+			},
+
+			specialistInformation:  {
+				'1': ["Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts", "Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts", "Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts", "Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts", "Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts", "Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts, Manually comparing and tracking statements/invoices and receipts"]
+			},
+
+
+			specialistCurrentState: {
+				'1' : ["placeholder", "placeholder", "placeholder" ]
+			},
+
+			specialistFutureState: {
+
+				'1' : ["placeholder", "placeholder", "placeholder"]
+
+			},
+
+			specialistFeatureAccountRight: {
+				'1' : ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder" ]
+
+			},
+
+			
+
+			specialistInsightAccountRight: {
+				'1' : ["placeholder", "placeholder", "placeholder" ]
+
+			},
+
+			specialistFeatureAccountEdge: {
+				'1' : ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder" ]
+
+			},
+
+			specialistInsightAccountEdge: {
+				'1' : ["placeholder", "placeholder", "placeholder" ]
+
+			},
+
+			specialistFeatureEssentials: {
+				'1' : ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder" ]
+
+			},
+
+			specialistInsightEssentials: {
+				'1' : ["placeholder", "placeholder", "placeholder" ]
+
+			},
+
+
+			specialistSummary: {
+				'1' : ["placeholder"]
+			},
+
+
+			specialistOpenPitch: {
+				'1' : ["placeholder", "placeholder", "placeholder"]
+			},
+
+			specialistClosingPitch: {
+				'1' : ["placeholder", "placeholder", "placeholder"]
+			},
+
+
+			specialistDiscovery: {
+				'1' : ["placeholder"]
+			},
+
+			specialistConversation: {
+				'1': ["placeholder","placeholder","placeholder","placeholder"]
+			},
+
+			clientConversation: {
+				'1': ["Do you mind if I ask some questions to find out a bit more about you, to see how we can help your business?", "I can help you get maximum value from our software during your trial, I’ll need to ask you some questions though", "I am the person that will be supporting you throughout your 30-day trial, do you mind if I ask you a few questions?", "I am your personal software consultant to ensure you are set up for success, do you have time now for a few questions?"]
+			},
+
+
 			data: {
 
 			},
+
+
 
 
 
@@ -210,7 +370,8 @@ class MainStore extends EventEmitter {
 				product: '',
 				result: '',
 				clientID: '',
-				help: ''
+				help: '',
+				specialist: false,
 			},
 
 		}
@@ -220,7 +381,49 @@ class MainStore extends EventEmitter {
 		console.log('hydrating')
 		axios.get(process.env.PUBLIC_URL+'data/getData', {headers: {"authorization" : 'Bearer '+window.sessionStorage.accessToken}}).then((result)=>{
 			console.log('result', result)
-			this.state.data = result.data
+			// new version change
+
+			if (result.data.endOpening) {
+				console.log('yes')
+				this.state.data = result.data
+			} else {
+				console.log('no')
+
+
+				result.data['specialistConversation'] = this.state.specialistConversation
+				result.data['specialistDiscovery'] = this.state.specialistDiscovery
+				result.data['specialistClosingPitch'] = this.state.specialistClosingPitch
+				result.data['specialistOpenPitch'] = this.state.specialistOpenPitch
+				result.data['specialistInsightEssentials'] = this.state.specialistInsightEssentials
+				result.data['specialistFeatureEssentials'] = this.state.specialistFeatureEssentials
+				result.data['specialistInsightAccountEdge'] = this.state.specialistInsightAccountEdge
+				result.data['specialistFeatureAccountEdge'] = this.state.specialistFeatureAccountEdge
+				result.data['specialistInsightAccountRight'] = this.state.specialistInsightAccountRight
+				result.data['specialistFeatureAccountRight'] = this.state.specialistFeatureAccountRight
+				result.data['specialistFutureState'] = this.state.specialistFutureState
+				result.data['specialistCurrentState'] = this.state.specialistCurrentState
+				result.data['specialistInformation'] = this.state.specialistInformation
+				result.data['specialistQuestions'] = this.state.specialistQuestions
+				result.data['specialistClientDiscovery'] = this.state.specialistClientDiscovery
+				result.data['specialistSoftwareDiscovery'] = this.state.specialistSoftwareDiscovery
+				result.data['specialistQuestions'] = this.state.specialistQuestions
+				result.data['specialistSummary'] = this.state.specialistSummary
+
+				result.data['callOpening'] = this.state.callOpening
+				result.data['endOpening'] = this.state.endOpening
+				result.data['endClosing'] = this.state.endClosing
+
+
+
+
+				this.state.data = result.data
+
+			}
+
+			
+
+			// this.state.data = this.state
+			// new version change finish
 		}).catch((err)=>{
 			console.log('error', err)
 		})
@@ -266,7 +469,8 @@ class MainStore extends EventEmitter {
 				product: '',
 				result: '',
 				clientID: '',
-				help: ''
+				help: '',
+				specialist: false,
 			}
 		}).catch((err)=>{
 			console.log('error', err)

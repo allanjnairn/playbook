@@ -77,15 +77,30 @@ export default class index extends React.Component {
     const {text, editing} = this.state
     const {chosen, ind} = this.props
 
+    if (this.props.makeList) {
+      console.log('its right here')
+      var listContents = text.split(',')
+      console.log(listContents)
 
+
+    }
 
     if (this.props.brackets) {
-      console.log(text)
 
       var first = text.split('-')[0]
-      var second = text.split('-')[1]
+      var second = text.split('-').slice(1).join('-')
+      // var second = text.split('-')[1]
+
+
+      if (second==='') {
+
+        second = first.replace(/[{()}]/g, '')
+        first = ''
+      } else {
 
       first = first.replace(/[{()}]/g, '')
+    }
+
 
 
     }
@@ -94,24 +109,45 @@ export default class index extends React.Component {
       <div  className={styles.editable}>
           {!editing ? (
               <div>
-                <ul>
-                  <li>
+                <ul style={this.props.numbered ? {listStyleType: 'none'} : {}}>
+                  <li style={this.props.numbered ? {display: 'flex', justifyContent: 'space-between'} : {}}>
+                  {this.props.numbered ? <div>{this.props.ind + 1}.</div> : ''}
                   {this.props.brackets ? (
                     <div>
                       <span className={styles.bold}>
                       {first}
                       </span>
-                      <span>
-                      {' - '}
-                      </span>
+                      {first ? (
+                        <span>
+                        {' - '}
+                        </span>
+                        ) : ''}
                       <span>
                         {second}
                       </span>
                     </div>
                     ) : (
-                    <span>
-                      {text}
-                    </span>
+                    <div className={styles.makeList}>
+                      {this.props.makeList ? (
+                          <span>
+                            <ul>
+                              {listContents.map((t)=>{
+                                if (t[0]==' ') {
+                                  t = t[1].toUpperCase()+t.substr(2)
+                                } else {
+                                  t = t[0].toUpperCase()+t.substr(1)
+                                }
+
+                                return <li>{t}</li>
+                              })}
+                            </ul>
+                          </span>
+                        ) : (
+                          <span>
+                            {text}
+                          </span>
+                        )}
+                    </div>
                     )} 
                     {MainStore.state.editing===false ? (
                         <div onClick={this.edit.bind(this)} className={styles.edit+' editButton'}>

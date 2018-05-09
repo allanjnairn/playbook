@@ -7,6 +7,11 @@ import Trade from '../../Images/tradie-1893.jpg'
 import Hospitality from '../../Images/hospitality-cafe-118-cndy.jpg'
 import Retail from '../../Images/franchise-accprtnrt-1712-indentikit-cabana.jpg'
 import Professional from '../../Images/pro-service-prtnrshp-0999-rgl.jpg'
+import Editable from '../../Components/Editable'
+
+import Target from '../../Images/target.png'
+
+
 
 
 
@@ -25,10 +30,36 @@ export default class index extends React.Component {
 
   render() {
 
+    console.log(MainStore.state.salesPath)
 
     return (
       <div className={styles.step3}>
-        <h2>What Does Your Client Do?</h2>
+
+        <div className={styles.startConversation}>
+          <h2>Four ways to start the client conversation</h2>
+          <div>
+            {MainStore.state.salesPath.specialist ? (
+
+                <ul>
+                  {MainStore.state.data.specialistConversation['1'].map((f, ind)=>{
+                    return <Editable text={f} ind={ind} first='specialistConversation' chosen={'1'} />
+
+                  })}
+                </ul>
+
+              ) : (
+                <ul>
+                  {MainStore.state['callOpening'][MainStore.state.salesPath.mission].map((q, ind)=>{
+                    return (
+                        <Editable text={q} ind={ind} first='callOpening' chosen={MainStore.state.salesPath.mission} />
+                      )
+                  })}
+                </ul>
+              )}
+          </div>
+        </div>
+
+        <h2>Getting to know your client - “What type of business do you own?”</h2>
         <div className={styles.options3}>
           <div onClick={this.chooseOption.bind(this, 'trade')} className={styles.option3}>
             <div className={styles.option3Image}>
@@ -95,6 +126,25 @@ export default class index extends React.Component {
           </div>
 
         </div>
+
+        {MainStore.state.salesPath.specialist ? (
+              <div className={styles.specialistTargetContainer}>
+                  <img src={Target} alt=""/>
+
+
+                <div className={styles.specialistTargetIndustry}>
+
+                  <h3>Target Industry</h3>
+
+
+
+
+                    <Editable text={MainStore.state.data.specialistDiscovery['1'][0]} ind={0} first='specialistDiscovery' chosen={'1'} />
+
+
+                </div>
+              </div>
+          ) : ''}
       </div>
     );
   }

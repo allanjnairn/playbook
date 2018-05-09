@@ -35,6 +35,7 @@ class App extends Component {
       if (window.location.href.toLowerCase().includes('resetpassword')) {
 
       } else {
+        console.log('hey there yeh')
         this.props.history.push('login')
       }
     }

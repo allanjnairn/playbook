@@ -16,6 +16,16 @@ export default class index extends React.Component {
 
 confirm() {
   const {password, confirmPassword} = this.state
+
+  let id = window.location.href.split('id=').pop()
+
+  console.log(id)
+  axios.post(process.env.PUBLIC_URL+'users/resetPassword', {password: password, confirmPassword: confirmPassword, id: id}).then((res)=>{
+    console.log(res)
+    window.location = '/login'
+  }).catch((err)=>{
+    console.log(err)
+  })
 }
 
   render() {

@@ -21,7 +21,12 @@ export default class index extends React.Component {
     
    if (e==='powerPay'||e==='mission3'||e==='mmem') {
 
+    MainStore.state.step = 3
+    MainStore.state.salesPath.specialist = true
+    MainStore.state.salesPath.mission = e
+    MainStore.emit('stepChange')    
    } else {
+    MainStore.state.salesPath.specialist = false
     MainStore.state.step = 3
     MainStore.state.salesPath.mission = e
     MainStore.emit('stepChange')

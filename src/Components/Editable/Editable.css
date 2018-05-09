@@ -61,3 +61,16 @@
 		}
 	}
 }
+
+.makeList {
+	ul {
+		list-style-type: disc;
+		padding-left: 12px!important;
+
+	}
+	li {
+		list-style-type: disc!important;
+		padding: 3px 0;
+
+	}
+}

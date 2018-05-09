@@ -71,7 +71,15 @@ export default class index extends React.Component {
 
   }
 
-  sendLink() {
+  sendLink(e) {
+    const {resetEmail} = this.state
+    e.preventDefault()
+    axios.post(process.env.PUBLIC_URL+'users/resetPasswordLink', {email: resetEmail, url: window.location.origin}).then((res)=>{
+
+      console.log(res)
+    }).catch((err)=>{
+      console.log(err)
+    })
 
   }
 
@@ -93,7 +101,7 @@ export default class index extends React.Component {
 
                 {forgottenPassword ? (
                     <div>
-                      <form >
+                      <form onSubmit={this.sendLink.bind(this)}>
                         <input placeholder="Enter your email" className={styles.sendLinkInput} value={resetEmail} onChange={(e)=>{this.setState({resetEmail: e.target.value})}} />
                       </form>
                       <div onClick={this.sendLink.bind(this)} className={styles.sendLinkButton}>

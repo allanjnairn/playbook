@@ -51,12 +51,12 @@ export default class index extends React.Component {
   render() {
 
     const {choices} = this.state
-
+    console.log("data", MainStore.state.data)
     console.log('mission', MainStore.state.salesPath.mission)
 
     return (
       <div className={styles.step4}>
-        <h2>Learn About Your Client</h2>
+        <h2>Discovery - Find out what topics are important to running their business</h2>
 
         <div className={styles.outcomes}>
           <div className={styles.outcome+' '+styles.outcomeDiscovery}>
@@ -64,16 +64,33 @@ export default class index extends React.Component {
               <h2>Client Discovery</h2>
             </div>
           
-            <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
+            {MainStore.state.salesPath.specialist ? (
 
-              {MainStore.state.data.clientDiscovery[MainStore.state.salesPath.mission].map((k, ind)=>{
-                return (
-                  <Editable text={k} ind={ind} first='clientDiscovery' chosen={MainStore.state.salesPath.mission} />
-                  )
-              })}
-             
-              
-            </div>
+              <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
+
+                {MainStore.state.data.specialistClientDiscovery['1'].map((k, ind)=>{
+                  return (
+                    <Editable text={k} ind={ind} first='clientDiscovery' chosen={MainStore.state.salesPath.mission} />
+                    )
+                })}
+               
+                
+              </div>
+
+              ) : (
+
+                <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
+
+                  {MainStore.state.data.clientDiscovery[MainStore.state.salesPath.mission].map((k, ind)=>{
+                    return (
+                      <Editable text={k} ind={ind} first='specialistClientDiscovery' chosen={'1'} />
+                      )
+                  })}
+                 
+                  
+                </div>
+
+              )}
           </div>
 
           <div className={styles.outcome+' '+styles.outcomeDiscovery}>
@@ -81,39 +98,70 @@ export default class index extends React.Component {
               <h2>Software Discovery</h2>
             </div>
           
-            <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
-              
-              {MainStore.state.data.softwareDiscovery[MainStore.state.salesPath.mission].map((k, ind)=>{
-                return (
-                  <Editable text={k} ind={ind} first='softwareDiscovery' chosen={MainStore.state.salesPath.mission} />
-                  )
-              })}
+            {MainStore.state.salesPath.specialist ? (
 
-            </div>
+              <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
+                
+                {MainStore.state.data.specialistSoftwareDiscovery['1'].map((k, ind)=>{
+                  return (
+                    <Editable text={k} ind={ind} first='specialistSoftwareDiscovery' chosen={'1'} />
+                    )
+                })}
+
+              </div>
+
+              ) : (
+
+              <div className={styles.outcomePoints +' '+styles.outcomePointsDiscovery}>
+                
+                {MainStore.state.data.softwareDiscovery[MainStore.state.salesPath.mission].map((k, ind)=>{
+                  return (
+                    <Editable text={k} ind={ind} first='softwareDiscovery' chosen={MainStore.state.salesPath.mission} />
+                    )
+                })}
+
+              </div>
+
+              )}
           </div>
         </div>
 
-        <h3 className={styles.determine}>Determine discussion target points (limit of 3)</h3>
+        {MainStore.state.salesPath.specialist ? '' : (
+          <h3 className={styles.determine}>Determine discussion target points (limit of 3)</h3>
+          )}
 
-        <div className={styles.multipleChoice}>
-          {MainStore.state.discovery.map((e, index)=>{
-            let chosen = false
-            choices.map((choice)=>{
-              if (choice===index) {
-                chosen = true
-              }
-            })
+        {MainStore.state.salesPath.specialist ? '' : (
+            <div className={styles.multipleChoice}>
+              {MainStore.state.discovery.map((e, index)=>{
+                let chosen = false
+                choices.map((choice)=>{
+                  if (choice===index) {
+                    chosen = true
+                  }
+                })
 
-            return (
-                <div onClick={this.cardClick.bind(this, index)} className={chosen ? styles.choiceCard+' '+styles.choiceCardActive : styles.choiceCard}>
-                  <span className='hoverHidden'>{e}</span>
-                  <div className='hoverText'>
-                    <span>{MainStore.state.discoveryHover[index]}</span>
-                  </div>
-                </div>
-              )
-          })}
-        </div>
+                return (
+                    <div onClick={this.cardClick.bind(this, index)} className={chosen ? styles.choiceCard+' '+styles.choiceCardActive : styles.choiceCard}>
+                      <span className='hoverHidden'>{e}</span>
+                      <div className='hoverText'>
+                        <span>{MainStore.state.discoveryHover[index]}</span>
+                      </div>
+                    </div>
+                  )
+              })}
+            </div>
+          )}
+
+        {MainStore.state.salesPath.specialist ? (
+            <div className={styles.specialistTargetPoints}>
+
+
+              <h3>Use Specialized Target Points</h3>
+              <h4>Specialized Campaign Target Points</h4>
+
+
+            </div>
+          ) : ''}
 
         {true ? (
           <div onClick={this.chooseOption.bind(this)} className={styles.button4}>

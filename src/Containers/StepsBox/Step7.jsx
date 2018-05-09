@@ -3,6 +3,8 @@ import styles from './StepsBox.css'
 import Sales from '../../Images/call-centre-ml-fml-238.jpg'
 import Support from '../../Images/callcentre-male-442.jpg'
 import MainStore from '../../Stores/MainStore.js'
+import Editable from '../../Components/Editable'
+
 
 
 export default class index extends React.Component {
@@ -13,6 +15,24 @@ export default class index extends React.Component {
     }
   }
 
+  componentDidMount() {
+    console.log(MainStore.state.salesPath['product'])
+    if (MainStore.state.salesPath['product'] == 'Essentials') {
+      console.log('worked')
+      this.setState({activeHeader: 1})
+    }
+    if (MainStore.state.salesPath['product'] == 'AccountRight') {
+      console.log('worked')
+      this.setState({activeHeader: 2})
+    }
+    if (MainStore.state.salesPath['product'] == 'AccountEdge') {
+      console.log('worked')
+      this.setState({activeHeader: 3})
+    }
+  }
+
+
+
 
   chooseOption() {
     MainStore.state.step = 2
@@ -20,14 +40,19 @@ export default class index extends React.Component {
   }
 
   next() {
-    const {activeHeader} = this.state
-    var obj = {1: 'Essentials',
-      2: 'AccountRight',
-      3: 'AccountEdge'
-    }
+    // const {activeHeader} = this.state
+    // var obj = {1: 'Essentials',
+    //   2: 'AccountRight',
+    //   3: 'AccountEdge'
+    // }
 
-    MainStore.state.salesPath['product'] = obj[activeHeader]
+    // MainStore.state.salesPath['product'] = obj[activeHeader]
     this.props.history.push('/home')
+  }
+
+  change() {
+   MainStore.state.step = 6
+   MainStore.emit('stepChange')
   }
 
   render() {
@@ -36,23 +61,52 @@ export default class index extends React.Component {
 
     return (
       <div className={styles.step6}>
-      	
-        <div className={styles.plans}>
-          <div className={styles.plansTop}>
 
-            <div onClick={()=>{this.setState({activeHeader: 1})}} className={activeHeader===1 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}> 
+      <div className={styles.openingStatements}>
+       <h2>
+        Opening your closing pitch…for {MainStore.state.salesPath['product']}
+       </h2>
+
+       {MainStore.state.salesPath.specialist ? (
+
+          <div>
+            <ul>
+                {MainStore.state.data.specialistOpenPitch['1'].map((p, ind)=>{
+                  return <Editable text={p} ind={ind} first='specialistOpenPitch' chosen={'1'} />
+                })}
+            </ul>
+          </div>
+
+        ) : (
+          
+          <div>
+            <ul>
+              {MainStore.state.data.endOpening[MainStore.state.salesPath['mission']].map((p, ind)=>{
+                return <Editable text={p} ind={ind} first='endOpening' chosen={MainStore.state.salesPath['mission']} />
+              })}
+            </ul>
+          </div>
+
+        )}
+      </div>
+
+      	
+        <div  className={styles.plans}>
+          <div style={{display: 'none'}}  className={styles.plansTop}>
+
+            <div style={activeHeader===1 ? {display: 'block'} : {display: 'none'}} onClick={()=>{this.setState({activeHeader: 1})}} className={activeHeader===1 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}> 
               <h2>Essentials</h2>
               <div className='pointer'>
               </div>
             </div>
 
-            <div onClick={()=>{this.setState({activeHeader: 2})}} className={activeHeader===2 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}>
+            <div style={activeHeader===2 ? {display: 'block'} : {display: 'none'}} onClick={()=>{this.setState({activeHeader: 2})}} className={activeHeader===2 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}>
               <h2>AccountRight</h2> 
               <div className='pointer'>
               </div>
             </div>
 
-            <div onClick={()=>{this.setState({activeHeader: 3})}} className={activeHeader===3 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}> 
+            <div style={activeHeader===3 ? {display: 'block'} : {display: 'none'}} onClick={()=>{this.setState({activeHeader: 3})}} className={activeHeader===3 ? styles.plansTopHeader+' '+styles.plansTopHeaderActive : styles.plansTopHeader}> 
               <h2>AccountEdge</h2>
               <div className='pointer'>
               </div>
@@ -60,128 +114,97 @@ export default class index extends React.Component {
 
           </div>
 
-          <div className={styles.plansBottom}>
-            <h3>Features</h3>
 
-            <div className={styles.sortBullets}>
 
-             {activeHeader===1 ? (
-                <ul>
-                  {MainStore.state.choices.map((choice, index)=>{
-                    return (
-                      <div>
 
-                        <div className={styles.outcomePurpleBox}>
-                          <h4 style={{textAlign: 'center'}} className={styles.bold+' '+styles.outcomePurple}>{MainStore.state.discovery[choice]}</h4>
-                        </div>
-                        {MainStore.state.featureAndBenefitAccountEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
-                          var first = k.split('-')[0]
-                          var second = k.split('-')[1]
+        <div className={styles.topicSection}>
+          {MainStore.state.choices.map((choice, index)=>{
 
-                          first = first.replace(/[{()}]/g, '')
-                          if (ind<20) {
-                            return (
+            return (
+              <div className={styles.topicBox}>
+                <div className={styles.topicBoxTop}>
+                  <h4>{MainStore.state.discovery[choice]}</h4>
+                </div>
+                <div className={styles.topicBoxBottom}>
+                  {activeHeader===1 ? (
+                    <p>
+                    {MainStore.state['pitchGuidanceEssentials'][MainStore.state.discovery[choice]]}
+                    </p>
+                    ) : ''}
 
-                              <li>
-                                <span className={styles.bold}>
-                                  {first}
-                                </span>
-                                <span>
-                                  {' - '}
-                                </span>
-                                <span>
-                                  {second}
-                                </span>
-                              </li>
-                              )
-                          }
-                        })}
-                      </div>
-                      )
-                  }) }
-                </ul>
-              ) : ''}
-             {activeHeader===2 ? (
-                <ul>
-                  {MainStore.state.choices.map((choice, index)=>{
-                    return (
-                      <div>
-                        <div className={styles.outcomePurpleBox}>
-                          <h4 style={{textAlign: 'center'}} className={styles.bold+' '+styles.outcomePurple}>{MainStore.state.discovery[choice]}</h4>
-                        </div>
-                        {MainStore.state.featureAndBenefitAccountRight[MainStore.state.discovery[choice]].map((k, ind)=>{
-                          var first = k.split('-')[0]
-                          var second = k.split('-')[1]
+                    {activeHeader===2 ? (
+                    <p>
+                    {MainStore.state['pitchGuidanceAccountRight'][MainStore.state.discovery[choice]]}
+                    </p>
+                    ) : ''}
 
-                          first = first.replace(/[{()}]/g, '')
-                          if (ind<20) {
-                            return (
+                    {activeHeader===3 ? (
+                    <p>
+                    {MainStore.state['pitchGuidanceAccountEdge'][MainStore.state.discovery[choice]]}
+                    </p>
+                    ) : ''}
+                </div>
+              </div>
+            )
 
-                              <li>
-                                <span className={styles.bold}>
-                                  {first}
-                                </span>
-                                <span>
-                                  {' - '}
-                                </span>
-                                <span>
-                                  {second}
-                                </span>
-                              </li>
-                              )
-                          }
-                        })}
-                      </div>
-                      )
-                  }) }
-                </ul>
-              ) : ''}
-             {activeHeader===3 ? (
-                <ul>
-                  {MainStore.state.choices.map((choice, index)=>{
-                    return (
-                      <div>
-                        <div className={styles.outcomePurpleBox}>
-                          <h4 style={{textAlign: 'center'}} className={styles.bold+' '+styles.outcomePurple}>{MainStore.state.discovery[choice]}</h4>
-                        </div>
-                        {MainStore.state.featureAndBenefitAccountEdge[MainStore.state.discovery[choice]].map((k, ind)=>{
-                          var first = k.split('-')[0]
-                          var second = k.split('-')[1]
-
-                          first = first.replace(/[{()}]/g, '')
-                          if (ind<20) {
-                            return (
-
-                              <li>
-                                <span className={styles.bold}>
-                                  {first}
-                                </span>
-                                <span>
-                                  {' - '}
-                                </span>
-                                <span>
-                                  {second}
-                                </span>
-                              </li>
-                              )
-                          }
-                        })}
-                      </div>
-                      )
-                  }) }
-                </ul>
-              ) : ''}
-            </div>
-
-            <div className={styles.plansBottomLeft}>
-            </div>
-            <div className={styles.plansBottomRight}>
-
-            </div>
-          </div>
+          })}
         </div>
 
-        <div>
+
+        {MainStore.state.salesPath.specialist ? (
+
+            <div style={{marginLeft: 'auto',minWidth: 800, marginRight: 'auto'}} className={styles.topicBox}>
+              <div className={styles.topicBoxTop}>
+                <h4>Specialized Summary</h4>
+              </div>
+
+              <div className={styles.topicBoxBottom}>
+                {MainStore.state.data.specialistSummary['1'].map((p, ind)=>{
+                  return <Editable text={p} ind={ind} first='specialistClosingPitch' chosen={'1'} />
+                })}
+              </div>
+
+            </div>
+
+
+          ) : ''}
+
+
+        <div className={styles.closingStatements}>
+         <h2>
+          Closing the sale…for {MainStore.state.salesPath['product']}
+         </h2>
+
+         {MainStore.state.salesPath.specialist ? (
+
+            <div>
+              <ul>
+                  {MainStore.state.data.specialistClosingPitch['1'].map((p, ind)=>{
+                    return <Editable text={p} ind={ind} first='specialistClosingPitch' chosen={'1'} />
+                  })}
+              </ul>
+            </div>
+
+          ) : (
+            
+            <div>
+              <ul>
+                {MainStore.state.data.endClosing[MainStore.state.salesPath['mission']].map((p, ind)=>{
+                  return <Editable text={p} ind={ind} first='endClosing' chosen={MainStore.state.salesPath['mission']} />
+                })}
+              </ul>
+            </div>
+
+
+         
+
+          )}
+
+         
+        </div>
+
+
+          
           {activeHeader===1 ? (
               <div className={styles.plansContainer}>
                 <div className={styles.plan}>
@@ -582,8 +605,13 @@ export default class index extends React.Component {
               ) : ''}
         </div>
 
+        
+
         <div style={{marginTop: 20}} className={styles.buttonContainer}>
-          <div onClick={this.next.bind(this)} className={styles.button5}>
+          <div style={{marginRight: 10}} onClick={this.change.bind(this)} className={styles.button5}>
+            <span>Change Product</span>
+          </div>
+          <div style={{marginRight: 10}} onClick={this.next.bind(this)} className={styles.button5}>
             <span>Next</span>
           </div>
         </div>
@@ -620,3 +648,134 @@ export default class index extends React.Component {
 //                 )
 //             })}
 // </div>
+
+
+
+
+
+
+
+// ADDD THIS BACK IN
+
+//   <div className={styles.plansBottom}>
+//     <h3>Features</h3>
+
+//     <div className={styles.sortBullets}>
+
+//      {activeHeader===1 ? (
+//         <ul>
+//           {MainStore.state.choices.map((choice, index)=>{
+//             return (
+//               <div>
+
+//                 <div className={styles.outcomePurpleBox}>
+//                   <h4 style={{textAlign: 'center'}} className={styles.bold+' '+styles.outcomePurple}>{MainStore.state.discovery[choice]}</h4>
+//                 </div>
+//                 {MainStore.state.featureAndBenefitAccountEssentials[MainStore.state.discovery[choice]].map((k, ind)=>{
+//                   var first = k.split('-')[0]
+//                   var second = k.split('-').slice(1).join('-')
+
+//                   first = first.replace(/[{()}]/g, '')
+//                   if (ind<20) {
+//                     return (
+
+//                       <li>
+//                         <span className={styles.bold}>
+//                           {first}
+//                         </span>
+//                         <span>
+//                           {' - '}
+//                         </span>
+//                         <span>
+//                           {second}
+//                         </span>
+//                       </li>
+//                       )
+//                   }
+//                 })}
+//               </div>
+//               )
+//           }) }
+//         </ul>
+//       ) : ''}
+//      {activeHeader===2 ? (
+//         <ul>
+//           {MainStore.state.choices.map((choice, index)=>{
+//             return (
+//               <div>
+//                 <div className={styles.outcomePurpleBox}>
+//                   <h4 style={{textAlign: 'center'}} className={styles.bold+' '+styles.outcomePurple}>{MainStore.state.discovery[choice]}</h4>
+//                 </div>
+//                 {MainStore.state.featureAndBenefitAccountRight[MainStore.state.discovery[choice]].map((k, ind)=>{
+//                   var first = k.split('-')[0]
+//                   var second = k.split('-').slice(1).join('-')
+
+//                   first = first.replace(/[{()}]/g, '')
+//                   if (ind<20) {
+//                     return (
+
+//                       <li>
+//                         <span className={styles.bold}>
+//                           {first}
+//                         </span>
+//                         <span>
+//                           {' - '}
+//                         </span>
+//                         <span>
+//                           {second}
+//                         </span>
+//                       </li>
+//                       )
+//                   }
+//                 })}
+//               </div>
+//               )
+//           }) }
+//         </ul>
+//       ) : ''}
+//      {activeHeader===3 ? (
+//         <ul>
+//           {MainStore.state.choices.map((choice, index)=>{
+//             return (
+//               <div>
+//                 <div className={styles.outcomePurpleBox}>
+//                   <h4 style={{textAlign: 'center'}} className={styles.bold+' '+styles.outcomePurple}>{MainStore.state.discovery[choice]}</h4>
+//                 </div>
+//                 {MainStore.state.featureAndBenefitAccountEdge[MainStore.state.discovery[choice]].map((k, ind)=>{
+//                   var first = k.split('-')[0]
+//                   var second = k.split('-').slice(1).join('-')
+
+//                   first = first.replace(/[{()}]/g, '')
+//                   if (ind<20) {
+//                     return (
+
+//                       <li>
+//                         <span className={styles.bold}>
+//                           {first}
+//                         </span>
+//                         <span>
+//                           {' - '}
+//                         </span>
+//                         <span>
+//                           {second}
+//                         </span>
+//                       </li>
+//                       )
+//                   }
+//                 })}
+//               </div>
+//               )
+//           }) }
+//         </ul>
+//       ) : ''}
+//     </div>
+
+//     <div className={styles.plansBottomLeft}>
+//     </div>
+//     <div className={styles.plansBottomRight}>
+
+//     </div>
+//   </div>
+// </div>
+
+// <div>
